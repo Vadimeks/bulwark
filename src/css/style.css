@@ -1,11 +1,31 @@
+/* --- Скіды і база --- */
+html,
+body {
+  background-color: #1a1a1a;
+  margin: 0;
+  padding: 0;
+}
+
 body {
   font-family: "Inter", sans-serif;
   line-height: 1.5;
-  background-color: #ffffff;
-  color: #1a1a1a;
+  color: #ffffff;
 }
 
-/* Адступы паміж секцыямі (40/60/80) */
+/* --- ГАЛОЎНАЕ: Стыкоўка з хэдэрам --- */
+main {
+  display: block;
+  /* Ствараем прастору пад фіксаваным хэдэрам */
+  padding-top: 92px;
+}
+
+@media (min-width: 768px) {
+  main {
+    padding-top: 92px;
+  }
+}
+
+/* --- Сістэма водступаў --- */
 .section-spacing {
   padding-top: 40px;
   padding-bottom: 40px;

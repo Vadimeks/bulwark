@@ -1,0 +1,113 @@
+.hero-bg {
+    background-color: #1a1a1a;
+    max-width: 350px;
+    margin: 0 auto;
+    display: flex;
+    align-items: flex-start;
+    position: relative;
+    overflow: hidden;
+
+    background-image:
+        linear-gradient(to bottom, rgba(26, 26, 26, 0.4) 0%, rgba(26, 26, 26, 0.9) 100%),
+        url('../../assets/img/hero-bg-mob.webp');
+    background-size: auto 100%;
+    background-position: center -50px;
+    background-repeat: no-repeat;
+}
+
+.hero-bg h1 {
+    line-height: 1;
+    margin-bottom: 30px;
+    margin-top: 60px;
+}
+
+.hero-bg p {
+    margin-bottom: 24px;
+}
+
+.hero-bg a {
+    padding: 12px 24px;
+    font-size: 12px;
+    width: 100%;
+
+}
+
+/* ПЛАНШЭТ (768px - 1279px) */
+@media (min-width: 768px) {
+    .hero-bg {
+        max-width: 768px;
+        margin: 0 auto;
+        min-height: calc(100vh - 136px);
+        display: flex;
+        align-items: flex-start;
+
+        background-image:
+            linear-gradient(to right,
+                rgba(26, 26, 26, 0.95) 0%,
+                rgba(26, 26, 26, 0.7) 40%,
+                rgba(26, 26, 26, 0) 100%),
+            url('../../assets/img/hero-bg-desc.webp');
+        background-position: 0 0, calc(100% + 160px) -100px;
+        background-size: 100% 100%, 140% auto;
+
+        background-repeat: no-repeat;
+    }
+
+    .hero-bg h1 {
+        font-size: 48px;
+        line-height: 1;
+        margin-bottom: 24px;
+        max-width: 400px;
+    }
+
+    .hero-bg p {
+        font-size: 16px;
+        max-width: 350px;
+        margin-bottom: 30px;
+    }
+
+    /* Кнопкі без !important (павышаем спецыфічнасць селектарам) */
+    .hero-bg .container-custom a {
+        padding: 12px 28px;
+        font-size: 13px;
+        width: auto;
+        display: inline-block;
+    }
+}
+
+@media (min-width: 1280px) {
+    .hero-bg {
+        max-width: 1280px;
+        /* Выкарыстоўваем тую ж логіку градыента, што і на планшэце, для маналітнасці */
+        background-image:
+            linear-gradient(to right,
+                rgba(26, 26, 26, 0.95) 5%,
+                rgba(26, 26, 26, 0.6) 100%,
+                rgba(26, 26, 26, 0) 100%),
+            url('../../assets/img/hero-bg-desc.webp');
+
+        background-position: 0 0, calc(100% + 260px) -210px;
+        background-size: 100% 100%, 140% auto;
+    }
+
+    .hero-bg h1 {
+        font-size: 80px;
+        margin-top: 80px;
+        max-width: 700px;
+        /* Павялічваем макс-шырыню для вялікага шрыфта */
+    }
+
+    .hero-bg p {
+        font-size: 20px;
+        max-width: 400px;
+        /* Крыху больш паветра для тэксту */
+        margin-bottom: 40px;
+    }
+
+    /* Захоўваем селектар для прыярытэту стыляў */
+    .hero-bg .container-custom a {
+        padding: 16px 40px;
+        font-size: 14px;
+        width: auto;
+    }
+}

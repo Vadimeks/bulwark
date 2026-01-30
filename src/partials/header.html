@@ -1,5 +1,6 @@
-<header id="main-header" class="fixed top-0 left-0 w-full z-50 bg-[#1a1a1a]">
-    <div class="bg-black/40 py-2 border-b border-white/5">
+<header id="main-header" class="fixed top-0 left-0 w-full bg-[#1a1a1a] z-50">
+
+    <div class="bg-black/40 border-b border-white/5">
         <div class="container-custom flex justify-end items-center gap-10">
             <div class="flex items-center gap-5 text-white text-base">
                 <a href="#" class="hover:text-red-600 transition-colors cursor-pointer"><i
@@ -23,35 +24,34 @@
         </div>
     </div>
 
-    <div class="container-custom">
-        <div class="flex items-center justify-between py-4">
-            <a href="/" class="flex items-center">
-                <img src="/src/assets/img/logo.svg" alt="Logo" class="h-12 md:h-20 w-auto object-contain mr-4">
-                <div class="flex flex-col text-white uppercase font-black leading-tight">
-                    <span class="text-lg md:text-xl tracking-tighter">Bulwark<br>fund</span>
-                    <span class="text-[10px] tracking-[0.2em] text-gray-400 font-bold">Ukraine</span>
-                </div>
+
+    <div class="container-custom flex items-center justify-between">
+        <a href="/" class="flex items-center">
+            <img src="/src/assets/img/logo.svg" alt="Logo" class="h-12 md:h-20 w-auto object-contain mr-4">
+            <div class="flex align-middle  flex-col text-white uppercase font-black leading-tight">
+                <span class="text-lg md:text-xl tracking-tighter">Bulwark<br>fund</span>
+                <span class="text-[10px] tracking-[0.2em] text-gray-400 font-bold mb-1">Ukraine</span>
+            </div>
+        </a>
+
+        <nav class="hidden md:flex items-center space-x-10 uppercase text-[13px] font-black tracking-widest text-white">
+            <a href="#projects" class="hover:text-red-600 transition-colors cursor-pointer">Праекты</a>
+            <a href="#contacts" class="hover:text-red-600 transition-colors cursor-pointer">Кантакты</a>
+
+            <a href="#"
+                class="bg-red-600 text-white px-8 py-2.5 hover:bg-white hover:text-black transition-all cursor-pointer">
+                Падтрымаць
             </a>
 
-            <nav
-                class="hidden md:flex items-center space-x-10 uppercase text-[13px] font-black tracking-widest text-white">
-                <a href="#projects" class="hover:text-red-600 transition-colors cursor-pointer">Праекты</a>
-                <a href="#contacts" class="hover:text-red-600 transition-colors cursor-pointer">Кантакты</a>
-
-                <a href="#"
-                    class="bg-red-600 text-white px-8 py-2.5 hover:bg-white hover:text-black transition-all cursor-pointer">
-                    Падтрымаць
-                </a>
-
-                <button id="open-sidebar"
-                    class="text-white hover:text-red-600 transition-colors flex items-center bg-transparent border-none p-0 outline-none cursor-pointer">
-                    <i class="fa-solid fa-bars text-3xl"></i>
-                </button>
-            </nav>
-
-            <button id="mobile-menu-btn" class="md:hidden text-white bg-transparent border-none p-0 cursor-pointer">
+            <button id="open-sidebar"
+                class="text-white hover:text-red-600 transition-colors flex items-center bg-transparent border-none p-0 outline-none cursor-pointer">
                 <i class="fa-solid fa-bars text-3xl"></i>
             </button>
-        </div>
+        </nav>
+
+        <button id="mobile-menu-btn" class="md:hidden text-white bg-transparent border-none p-0 cursor-pointer">
+            <i class="fa-solid fa-bars text-3xl"></i>
+        </button>
     </div>
+
 </header>
