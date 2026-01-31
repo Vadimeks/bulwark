@@ -1,57 +1,58 @@
 <header id="main-header" class="fixed top-0 left-0 w-full bg-[#1a1a1a] z-50">
-
-    <div class="bg-black/40 border-b border-white/5">
-        <div class="container-custom flex justify-end items-center gap-10">
-            <div class="flex items-center gap-5 text-white text-base">
-                <a href="#" class="hover:text-red-600 transition-colors cursor-pointer"><i
-                        class="fa-brands fa-telegram"></i></a>
-                <a href="#" class="hover:text-red-600 transition-colors cursor-pointer"><i
-                        class="fa-brands fa-instagram"></i></a>
-                <a href="#" class="hover:text-red-600 transition-colors cursor-pointer"><i
-                        class="fa-brands fa-facebook"></i></a>
-                <a href="#" class="hover:text-red-600 transition-colors cursor-pointer"><i
-                        class="fa-brands fa-x-twitter"></i></a>
-                <a href="#" class="hover:text-red-600 transition-colors cursor-pointer"><i
-                        class="fa-brands fa-youtube"></i></a>
+    <div class="bg-black/40 border-b border-white/5 py-2">
+        <div class="container-custom flex justify-end items-center gap-8">
+            <div class="flex items-center gap-6 text-white text-xl">
+                <a href="#" class="hover:text-red-600 transition-colors"><i class="fa-brands fa-telegram"></i></a>
+                <a href="#" class="hover:text-red-600 transition-colors"><i class="fa-brands fa-instagram"></i></a>
+                <a href="#" class="hover:text-red-600 transition-colors"><i class="fa-brands fa-facebook"></i></a>
+                <a href="#" class="hover:text-red-600 transition-colors"><i class="fa-brands fa-x-twitter"></i></a>
+                <a href="#" class="hover:text-red-600 transition-colors"><i class="fa-brands fa-youtube"></i></a>
             </div>
 
-            <div class="flex items-center gap-3 text-[10px] font-black text-white uppercase tracking-tighter">
-                <a href="#" class="text-red-600 cursor-pointer">BE</a>
-                <a href="#" class="hover:text-red-600 transition-colors text-gray-400 cursor-pointer">EN</a>
-                <a href="#" class="hover:text-red-600 transition-colors text-gray-400 cursor-pointer">UA</a>
-                <a href="#" class="hover:text-red-600 transition-colors text-gray-400 cursor-pointer">RU</a>
+            <div class="relative group dropdown-lang">
+                <button
+                    class="flex items-center gap-2 text-[12px] font-black text-white uppercase tracking-widest cursor-pointer py-1">
+                    <span class="text-red-600">BE</span>
+                    <i class="fa-solid fa-chevron-down text-[10px] transition-transform group-hover:rotate-180"></i>
+                </button>
+
+                <div
+                    class="absolute right-0 top-full pt-2 opacity-0 invisible translate-y-2 transition-all duration-300 group-hover:opacity-100 group-hover:visible group-hover:translate-y-0 z-60">
+                    <div class="bg-[#1a1a1a] border border-white/10 shadow-2xl flex flex-col min-w-15">
+                        <a href="#"
+                            class="px-4 py-2 text-[11px] font-black text-gray-400 hover:text-white hover:bg-white/5 transition-colors border-b border-white/5">EN</a>
+                        <a href="#"
+                            class="px-4 py-2 text-[11px] font-black text-gray-400 hover:text-white hover:bg-white/5 transition-colors border-b border-white/5">UA</a>
+                        <a href="#"
+                            class="px-4 py-2 text-[11px] font-black text-gray-400 hover:text-white hover:bg-white/5 transition-colors">RU</a>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
 
-
-    <div class="container-custom flex items-center justify-between">
+    <div class="container-custom flex items-center justify-between py-2">
         <a href="/" class="flex items-center">
             <img src="/src/assets/img/logo.svg" alt="Logo" class="h-12 md:h-20 w-auto object-contain mr-4">
-            <div class="flex align-middle  flex-col text-white uppercase font-black leading-tight">
+            <div class="flex flex-col text-white uppercase font-black leading-[0.85]">
                 <span class="text-lg md:text-xl tracking-tighter">Bulwark<br>fund</span>
-                <span class="text-[10px] tracking-[0.2em] text-gray-400 font-bold mb-1">Ukraine</span>
+                <span class="text-[10px] tracking-[0.2em] text-gray-400 font-bold mt-1">Ukraine</span>
             </div>
         </a>
 
         <nav class="hidden md:flex items-center space-x-10 uppercase text-[13px] font-black tracking-widest text-white">
-            <a href="#projects" class="hover:text-red-600 transition-colors cursor-pointer">Праекты</a>
-            <a href="#contacts" class="hover:text-red-600 transition-colors cursor-pointer">Кантакты</a>
-
+            <a href="#projects" class="hover:text-red-600 transition-colors">Праекты</a>
+            <a href="#contacts" class="hover:text-red-600 transition-colors">Кантакты</a>
             <a href="#"
-                class="bg-red-600 text-white px-8 py-2.5 hover:bg-white hover:text-black transition-all cursor-pointer">
-                Падтрымаць
-            </a>
-
+                class="bg-red-600 text-white px-8 py-2.5 hover:bg-white hover:text-black transition-all">Падтрымаць</a>
             <button id="open-sidebar"
-                class="text-white hover:text-red-600 transition-colors flex items-center bg-transparent border-none p-0 outline-none cursor-pointer">
+                class="text-white hover:text-red-600 transition-colors flex items-center cursor-pointer">
                 <i class="fa-solid fa-bars text-3xl"></i>
             </button>
         </nav>
 
-        <button id="mobile-menu-btn" class="md:hidden text-white bg-transparent border-none p-0 cursor-pointer">
+        <button id="mobile-menu-btn" class="md:hidden text-white cursor-pointer">
             <i class="fa-solid fa-bars text-3xl"></i>
         </button>
     </div>
-
 </header>

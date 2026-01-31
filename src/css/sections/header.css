@@ -1,0 +1,15 @@
+/* src/css/header.css */
+
+
+.dropdown-lang.is-active div,
+.dropdown-lang:hover div {
+    opacity: 1 !important;
+    visibility: visible !important;
+    transform: translateY(0) !important;
+}
+
+/* Паварот стрэлкі */
+.dropdown-lang.is-active i.fa-chevron-down,
+.dropdown-lang:hover i.fa-chevron-down {
+    transform: rotate(180deg);
+}
