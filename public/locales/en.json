@@ -59,5 +59,30 @@
   "contacts": {
     "title": "Contacts",
     "socials": "Social Media"
+  },
+  "activity": {
+    "tag": "Areas of work",
+    "title": "Systemic Support",
+    "item1_title": "Legal Shield",
+    "item1_text": "Legalization in Ukraine (Residency permits), recovery of documents, and protection against extradition or persecution by the RB regime.",
+    "item2_title": "Psychological Support",
+    "item2_text": "Combat stress and PTSD therapy, working with 'survivor guilt,' and assistance in social adaptation after the front line.",
+    "item3_title": "Investment in the Future",
+    "item3_text": "Preserving human capital for a new Belarus: supporting those who will become leaders and builders of a free country tomorrow."
+  },
+  "volunteers": {
+    "title": "Are you at the front?",
+    "text": "We know that war is not only about battles, but also a legal labyrinth and a psychological challenge. If you need legalization or support — we are here for you."
+  },
+  "partners": {
+    "text": "We are always open to cooperation with organizations, foundations, and businesses. Together we can do more.",
+    "btn": "Suggest cooperation"
+  },
+  "forms": {
+    "unit": "Unit / Callsign",
+    "needs": "What exactly do you need?",
+    "contact": "Telegram for contact",
+    "org": "Organization",
+    "btn_request": "Send request"
   }
 }

@@ -19,28 +19,48 @@ main {
   padding-top: 92px;
 }
 
-@media (min-width: 768px) {
-  main {
-    padding-top: 92px;
-  }
-}
-
 /* --- Сістэма водступаў --- */
 .section-spacing {
   padding-top: 40px;
   padding-bottom: 40px;
 }
 
+/* Адаптыўныя загалоўкі для секцый */
+.section-title {
+  font-weight: 900;
+  text-transform: uppercase;
+  font-style: italic;
+  line-height: 1.1;
+  color: #ffffff;
+  /* Памер для мабільных */
+  font-size: 22px;
+
+}
+
 @media (min-width: 768px) {
+  main {
+    padding-top: 92px;
+  }
+
+  .section-title {
+    font-size: 32px;
+    white-space: normal;
+  }
+
   .section-spacing {
     padding-top: 60px;
     padding-bottom: 60px;
   }
 }
 
+
 @media (min-width: 1280px) {
   .section-spacing {
     padding-top: 80px;
     padding-bottom: 80px;
+  }
+
+  .section-title {
+    font-size: 48px;
   }
 }
