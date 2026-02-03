@@ -27,14 +27,14 @@
             </div>
         </a>
 
-        <div class="flex items-center gap-8">
+        <div class="flex items-center gap-4 md:gap-8">
+            <a href="#hero" id="home-link"
+                class="text-white hover:text-red-600 transition-all duration-300 opacity-0 translate-x-5 pointer-events-none">
+                <i class="fa-solid fa-house text-xl md:text-2xl"></i>
+            </a>
+
             <nav
                 class="hidden xl:flex items-center space-x-10 uppercase text-[13px] font-black tracking-widest text-white">
-                <a href="#hero" id="home-link"
-                    class="text-white hover:text-red-600 transition-all duration-300 opacity-0 translate-x-5 pointer-events-none">
-                    <i class="fa-solid fa-house text-xl"></i>
-                </a>
-
                 <a href="#about" data-i18n="nav.about" class="hover:text-red-600 transition-colors">Пра фонд</a>
                 <a href="#contacts" data-i18n="nav.contacts" class="hover:text-red-600 transition-colors">Кантакты</a>
                 <a href="#donate" data-i18n="nav.donate"
@@ -46,7 +46,7 @@
                 </button>
             </nav>
 
-            <button id="mobile-menu-btn" class="xl:hidden text-white cursor-pointer">
+            <button id="mobile-menu-btn" class="xl:hidden text-white cursor-pointer ml-2">
                 <i class="fa-solid fa-bars text-3xl"></i>
             </button>
         </div>
