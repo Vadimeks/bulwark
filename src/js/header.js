@@ -6,10 +6,29 @@ export function initHeader() {
   const mobileBtn = document.getElementById("mobile-menu-btn");
   const header = document.getElementById("main-header");
   const homeLink = document.getElementById("home-link");
-
-  const langDropdown = document.querySelector(".dropdown-lang");
+  const langDropdown = document.getElementById("lang-dropdown");
   const langBtn = document.getElementById("lang-btn");
 
+  // --- МОВЫ ---
+  function toggleLang(e) {
+    e.preventDefault();
+    // Прыбралі stopPropagation, каб i18n.js мог злавіць падзею
+    langDropdown?.classList.toggle("is-active");
+  }
+
+  langDropdown?.addEventListener("click", (e) => {
+    if (e.target.closest(".lang-switch")) {
+      langDropdown.classList.remove("is-active");
+    }
+  });
+
+  document.addEventListener("click", (e) => {
+    if (langDropdown && !langDropdown.contains(e.target)) {
+      langDropdown.classList.remove("is-active");
+    }
+  });
+
+  // --- САЙДБАР ---
   function openSidebar() {
     sidebar?.classList.remove("translate-x-full");
     overlay?.classList.remove("hidden");
@@ -28,46 +47,26 @@ export function initHeader() {
     document.body.style.overflow = "";
   }
 
-  // НОВАЕ: Закрыццё пры кліку на спасылкі
-  const sidebarLinks = sidebar?.querySelectorAll("a");
-  sidebarLinks?.forEach((link) => {
-    link.addEventListener("click", () => {
-      closeSidebar();
-    });
+  sidebar?.querySelectorAll("a").forEach((link) => {
+    link.addEventListener("click", closeSidebar);
   });
 
+  // --- СКРОЛ ---
   function handleScroll() {
-    if (window.scrollY > 300) {
-      // З'яўленне доміка
-      homeLink?.classList.remove(
-        "opacity-0",
-        "translate-x-5",
-        "pointer-events-none",
-      );
-      homeLink?.classList.add("opacity-100", "translate-x-0");
+    const isScrolled = window.scrollY > 300;
+    homeLink?.classList.toggle("opacity-0", !isScrolled);
+    homeLink?.classList.toggle("translate-x-5", !isScrolled);
+    homeLink?.classList.toggle("pointer-events-none", !isScrolled);
+    homeLink?.classList.toggle("opacity-100", isScrolled);
+    homeLink?.classList.toggle("translate-x-0", isScrolled);
 
-      // Эфект празрыстасці пры скроле
-      header?.classList.remove("bg-[#1a1a1a]"); // Прыбіраем шчыльны фон
+    if (isScrolled) {
+      header?.classList.remove("bg-[#1a1a1a]");
       header?.classList.add("bg-black/60", "backdrop-blur-md", "shadow-2xl");
     } else {
-      // Знікненне доміка
-      homeLink?.classList.add(
-        "opacity-0",
-        "translate-x-5",
-        "pointer-events-none",
-      );
-      homeLink?.classList.remove("opacity-100", "translate-x-0");
-
-      // Вяртаем шчыльны фон на старце
       header?.classList.add("bg-[#1a1a1a]");
       header?.classList.remove("bg-black/60", "backdrop-blur-md", "shadow-2xl");
     }
-  }
-
-  function toggleLang(e) {
-    e.preventDefault();
-    e.stopPropagation();
-    langDropdown?.classList.toggle("is-active");
   }
 
   window.addEventListener("scroll", handleScroll);
@@ -76,12 +75,6 @@ export function initHeader() {
   closeBtn?.addEventListener("click", closeSidebar);
   overlay?.addEventListener("click", closeSidebar);
   langBtn?.addEventListener("click", toggleLang);
-
-  document.addEventListener("click", (e) => {
-    if (langDropdown && !langDropdown.contains(e.target)) {
-      langDropdown.classList.remove("is-active");
-    }
-  });
 
   handleScroll();
 }

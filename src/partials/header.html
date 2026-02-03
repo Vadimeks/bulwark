@@ -8,16 +8,25 @@
                 <a href="#" class="hover:text-red-600 transition-colors"><i class="fa-brands fa-x-twitter"></i></a>
                 <a href="#" class="hover:text-red-600 transition-colors"><i class="fa-brands fa-youtube"></i></a>
             </div>
-            <div class="relative dropdown-lang inline-block">
+            <div id="lang-dropdown" class="relative dropdown-lang inline-block">
                 <button id="lang-btn"
                     class="flex items-center gap-2 text-[12px] font-black text-white uppercase tracking-widest cursor-pointer py-1">
                     <span id="current-lang" class="text-red-600">BE</span>
                     <i class="fa-solid fa-chevron-down text-[10px] transition-transform"></i>
                 </button>
+                <div class="dropdown-content absolute right-0 mt-2 bg-[#1a1a1a] border border-white/10 py-2 w-20">
+                    <a href="#" data-lang="be"
+                        class="lang-switch block px-4 py-1 text-white hover:text-red-600 transition-colors">BE</a>
+                    <a href="#" data-lang="uk"
+                        class="lang-switch block px-4 py-1 text-white hover:text-red-600 transition-colors">UK</a>
+                    <a href="#" data-lang="en"
+                        class="lang-switch block px-4 py-1 text-white hover:text-red-600 transition-colors">EN</a>
+                    <a href="#" data-lang="ru"
+                        class="lang-switch block px-4 py-1 text-white hover:text-red-600 transition-colors">RU</a>
+                </div>
             </div>
         </div>
     </div>
-
     <div class="container-custom flex items-center justify-between py-2">
         <a href="/" class="flex items-center shrink-0">
             <img src="/src/assets/img/logo.svg" alt="Logo" class="h-12 md:h-20 w-auto object-contain mr-4">
@@ -37,7 +46,7 @@
                 class="hidden xl:flex items-center space-x-10 uppercase text-[13px] font-black tracking-widest text-white">
                 <a href="#about" data-i18n="nav.about" class="hover:text-red-600 transition-colors">Пра фонд</a>
                 <a href="#contacts" data-i18n="nav.contacts" class="hover:text-red-600 transition-colors">Кантакты</a>
-                <a href="#donate" data-i18n="nav.donate"
+                <a href="#donate" data-i18n="nav.support"
                     class="bg-red-600 text-white px-8 py-2.5 hover:bg-white hover:text-black transition-all">Падтрымаць</a>
 
                 <button id="open-sidebar"
