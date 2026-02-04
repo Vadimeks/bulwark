@@ -37,6 +37,21 @@ main {
 
 }
 
+/* Выраўноўванне вышыні ўсіх слайдаў */
+.swiper-wrapper {
+  display: flex !important;
+}
+
+.swiper-slide {
+  height: auto !important;
+  display: flex !important;
+}
+
+/* Гэта прымусіць унутраны блок з фонам #1a1a1a займаць усю вышыню слайда */
+.swiper-slide>div {
+  width: 100%;
+}
+
 @media (min-width: 768px) {
   main {
     padding-top: 92px;
