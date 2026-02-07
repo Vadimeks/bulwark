@@ -1,7 +1,7 @@
 export function initHeader() {
   const sidebar = document.getElementById("sidebar");
   const overlay = document.getElementById("sidebar-overlay");
-  const openBtn = document.getElementById("open-sidebar");
+  // const openBtn = document.getElementById("open-sidebar");
   const closeBtn = document.getElementById("close-sidebar");
   const mobileBtn = document.getElementById("mobile-menu-btn");
   const header = document.getElementById("main-header");
@@ -70,7 +70,7 @@ export function initHeader() {
   }
 
   window.addEventListener("scroll", handleScroll);
-  openBtn?.addEventListener("click", openSidebar);
+  // openBtn?.addEventListener("click", openSidebar);
   mobileBtn?.addEventListener("click", openSidebar);
   closeBtn?.addEventListener("click", closeSidebar);
   overlay?.addEventListener("click", closeSidebar);
