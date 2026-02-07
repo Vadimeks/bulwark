@@ -1,6 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap");
 @import "tailwindcss";
-@import "./sections/sidebar.css";
+@import "./sections/mobile-menu.css";
 @import "./sections/hero.css";
 @import "./sections/header.css";
 
