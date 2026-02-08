@@ -1,1 +1,15 @@
-node_modules
+# Залежнасці
+node_modules/
+
+# Вынік білда (тое, што стварае npm run build)
+dist/
+
+# Лакальныя зменныя і логі
+.env*.local
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Смецце аперацыйных сістэм
+.DS_Store
+Thumbs.db
