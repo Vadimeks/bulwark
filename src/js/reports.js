@@ -1,24 +1,49 @@
-import Swiper from "swiper";
-import { Navigation } from "swiper/modules";
-import "swiper/css";
-import "swiper/css/navigation";
+export async function initFullReportsGrid() {
+  const gridContainer = document.getElementById("reports-grid-full");
+  if (!gridContainer) return;
 
-export function initReportsSlider() {
-  const reportsContainer = document.querySelector(".reports-slider");
-  if (reportsContainer) {
-    new Swiper(reportsContainer, {
-      modules: [Navigation],
-      slidesPerView: 1,
-      spaceBetween: 24,
-      loop: true,
-      navigation: {
-        nextEl: ".reports-next",
-        prevEl: ".reports-prev",
-      },
-      breakpoints: {
-        640: { slidesPerView: 2 },
-        1024: { slidesPerView: 3 },
-      },
+  try {
+    const response = await fetch("/data/reports.json");
+    const allNews = await response.json();
+
+    // Сартаванне па даце (свежыя зверху)
+    const parseDate = (dateStr) => {
+      const [day, month, year] = dateStr.split(".").map(Number);
+      return new Date(year, month - 1, day);
+    };
+
+    const sortedReports = allNews.sort((a, b) => {
+      const dateA = parseDate(a.date);
+      const dateB = parseDate(b.date);
+      return dateB - dateA || b.id - a.id;
     });
+
+    gridContainer.innerHTML = sortedReports
+      .map(
+        (reports) => `
+            <div class="bg-black/20 border border-white/5 h-full flex flex-col hover:border-red-600/30 transition-all group">
+                <div class="aspect-video bg-black/40 flex items-center justify-center p-8 overflow-hidden relative">
+                    <img src="/src/assets/img/logo.svg" alt="Logo" class="w-20 opacity-20 group-hover:scale-110 transition-transform duration-500">
+                </div>
+                <div class="p-6 flex flex-col grow">
+                    <span class="text-red-600 text-[10px] font-bold uppercase tracking-widest mb-2">${reports.date}</span>
+                    <h4 class="text-white font-bold mb-3 line-clamp-2 italic uppercase text-sm tracking-widest group-hover:text-red-600 transition-colors">
+                        ${reports.title}
+                    </h4>
+                    <p class="text-gray-400 text-sm mb-6 line-clamp-3 leading-relaxed">
+                        ${reports.excerpt}
+                    </p>
+                    <a href="${reports.link}" class="mt-auto text-white text-[10px] font-black uppercase tracking-widest flex items-center gap-2 group-hover:text-red-600">
+                        <span data-i18n="reports.more">Больш</span>
+                        <i class="fa-solid fa-chevron-right text-[8px]"></i>
+                    </a>
+                </div>
+            </div>
+        `,
+      )
+      .join("");
+  } catch (error) {
+    console.error("Памылка загрузкі справаздач:", error);
+    gridContainer.innerHTML = `<p class="text-white">Не ўдалося загрузіць справаздачы.</p>`;
   }
 }

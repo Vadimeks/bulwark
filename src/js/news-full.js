@@ -34,7 +34,7 @@ export async function initFullNewsGrid() {
                         ${news.excerpt}
                     </p>
                     <a href="${news.link}" class="mt-auto text-white text-[10px] font-black uppercase tracking-widest flex items-center gap-2 group-hover:text-red-600">
-                        <span data-i18n="materials.more">Больш</span>
+                        <span data-i18n="news.more">Больш</span>
                         <i class="fa-solid fa-chevron-right text-[8px]"></i>
                     </a>
                 </div>
