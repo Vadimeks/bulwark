@@ -12,7 +12,7 @@ export async function initMaterials() {
     const response = await fetch("/data/materials.json");
     const data = await response.json();
 
-    // 1. Галоўная навігацыя (унізе старонкі)
+    // 1. Галоўная навігацыя (скрол да картак на старонцы)
     if (nav) {
       nav.innerHTML = data
         .map(
@@ -26,7 +26,7 @@ export async function initMaterials() {
         .join("");
     }
 
-    // 2. Генерацыя картак
+    // 2. Генерацыя картак матэрыялаў
     container.innerHTML = data
       .map(
         (item) => `
@@ -55,54 +55,62 @@ export async function initMaterials() {
       )
       .join("");
 
-    // 3. Мадальнае вакно
+    // 3. Функцыя адкрыцця мадалкі
     const openModal = (id) => {
       const item = data.find((m) => m.id === id);
       if (item) {
+        // Устаўляем кантэнт з адаптыўнымі загалоўкамі
         modalContent.innerHTML = `
             <div class="mb-10">
-                <span class="text-red-600 font-bold uppercase tracking-widest text-xs">#${item.category}</span>
-                <h2 class="text-3xl md:text-4xl font-black uppercase italic text-white mt-2">${item.title}</h2>
+                <span class="text-red-600 font-bold uppercase tracking-widest text-[10px] md:text-xs">#${item.category}</span>
+                <h2 class="text-2xl md:text-4xl lg:text-5xl font-black uppercase italic text-white mt-2 leading-none tracking-tighter wrap-break-words">
+                    ${item.title}
+                </h2>
             </div>
-            <div class="material-text text-gray-300">
+            <div class="material-text text-gray-300 mb-20">
                 ${item.content}
             </div>
         `;
 
+        // Аўтаматычная генерацыя ўнутранай навігацыі (Sticky Bottom)
         if (modalInternalNav) {
-          const anchors = [
-            { id: "legal-who", text: "Хто лічыцца" },
-            { id: "legal-why", text: "Навошта" },
-            { id: "legal-vnj", text: "ВНЖ" },
-            { id: "legal-pmj", text: "ПМЖ" },
-            { id: "legal-citizen", text: "Грамадзянства" },
-            { id: "legal-refusal", text: "Адмова" },
-          ];
+          // Шукаем усе h3, якія маюць id у кантэнце
+          const headings = modalContent.querySelectorAll("h3[id]");
 
-          modalInternalNav.innerHTML = anchors
-            .map(
-              (a) => `
-              <button data-anchor="${a.id}" class="px-3 py-2 bg-black border border-white/10 text-[9px] uppercase font-black tracking-widest text-white/50 hover:text-red-600 hover:border-red-600 transition-all">
-                ${a.text}
-              </button>
-            `,
-            )
-            .join("");
+          if (headings.length > 0) {
+            modalInternalNav.innerHTML = Array.from(headings)
+              .map(
+                (h3) => `
+                <button data-anchor="${h3.id}" 
+                        class="px-3 py-2 bg-black border border-white/10 text-[8px] md:text-[10px] uppercase font-black tracking-widest text-white/50 hover:text-red-600 hover:border-red-600 transition-all">
+                  ${h3.innerText}
+                </button>
+              `,
+              )
+              .join("");
 
-          modalInternalNav.onclick = (e) => {
-            const btn = e.target.closest("button");
-            if (btn) {
-              const targetId = btn.dataset.anchor;
-              const targetElement = document.getElementById(targetId);
-              const scrollContainer = modal.querySelector(".overflow-y-auto");
-              if (targetElement && scrollContainer) {
-                scrollContainer.scrollTo({
-                  top: targetElement.offsetTop - 40,
-                  behavior: "smooth",
-                });
+            modalInternalNav.classList.remove("hidden");
+
+            // Дэлегаванне кліку для скролу ўнутры мадалкі
+            modalInternalNav.onclick = (e) => {
+              const btn = e.target.closest("button");
+              if (btn) {
+                const targetElement = document.getElementById(
+                  btn.dataset.anchor,
+                );
+                const scrollContainer = modal.querySelector(".overflow-y-auto");
+                if (targetElement && scrollContainer) {
+                  scrollContainer.scrollTo({
+                    top: targetElement.offsetTop - 20,
+                    behavior: "smooth",
+                  });
+                }
               }
-            }
-          };
+            };
+          } else {
+            modalInternalNav.innerHTML = "";
+            modalInternalNav.classList.add("hidden");
+          }
         }
 
         modal.classList.remove("hidden");
@@ -110,6 +118,7 @@ export async function initMaterials() {
       }
     };
 
+    // Слухачы падзей
     container.addEventListener("click", (e) => {
       const btn = e.target.closest(".read-more-btn");
       if (btn) openModal(btn.dataset.id);
@@ -122,9 +131,10 @@ export async function initMaterials() {
 
     closeBtn.onclick = closeModal;
 
-    // Кнопкі ўтыліт
+    // Утыліты (Друк і Капіяванне)
     document.getElementById("print-material").onclick = () =>
       setTimeout(() => window.print(), 250);
+
     document.getElementById("copy-material").onclick = async () => {
       const copyTextSpan = document.getElementById("copy-text");
       await navigator.clipboard.writeText(modalContent.innerText);
@@ -132,14 +142,16 @@ export async function initMaterials() {
       setTimeout(() => (copyTextSpan.innerText = "Скапіяваць тэкст"), 2000);
     };
 
+    // Закрыццё па кліку на фон
     modal.onclick = (e) => {
       if (
         e.target.id === "material-modal" ||
         e.target.classList.contains("container-custom")
-      )
+      ) {
         closeModal();
+      }
     };
   } catch (e) {
-    console.error("Error:", e);
+    console.error("Error loading materials:", e);
   }
 }

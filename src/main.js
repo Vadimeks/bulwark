@@ -10,6 +10,7 @@ import { initZarokVajara } from "./js/zarok-vajara.js";
 import { initFullNewsGrid } from "./js/news-full.js";
 import { initGallerySlider } from "./js/gallery.js";
 import { initMaterials } from "./js/materials.js";
+import { initProjects } from "./js/projects.js";
 
 document.addEventListener("DOMContentLoaded", () => {
   initHeader();
@@ -22,4 +23,5 @@ document.addEventListener("DOMContentLoaded", () => {
   initFullNewsGrid();
   initGallerySlider();
   initMaterials();
+  initProjects();
 });
