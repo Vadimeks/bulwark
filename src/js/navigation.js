@@ -4,14 +4,13 @@
 
 export const initNavigation = () => {
   const navLinks = document.querySelectorAll(".js-nav-link");
-  const mobileMenu = document.querySelector(".mobile-menu"); // Замяні на свой клас
-  const menuBurger = document.querySelector(".burger-button"); // Кнопка адкрыцця/закрыцця
+  const mobileMenu = document.querySelector(".mobile-menu");
+  const menuBurger = document.querySelector(".burger-button");
 
   // 1. Функцыя закрыцця мабільнага меню
   const closeMenu = () => {
     if (mobileMenu && mobileMenu.classList.contains("is-open")) {
       mobileMenu.classList.remove("is-open");
-      // Калі ты мяняеш абразок бургер-кнопкі, дадай лагіку сюды
     }
   };
 
