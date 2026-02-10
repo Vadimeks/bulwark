@@ -1,4 +1,3 @@
-/* --- Скіды і база --- */
 html,
 body {
   background-color: #1a1a1a;
@@ -12,32 +11,26 @@ body {
   color: #ffffff;
 }
 
-/* --- ГАЛОЎНАЕ: Стыкоўка з хэдэрам --- */
 main {
   display: block;
-  /* Ствараем прастору пад фіксаваным хэдэрам */
-  padding-top: 92px;
 }
 
-/* --- Сістэма водступаў --- */
 .section-spacing {
   padding-top: 40px;
   padding-bottom: 40px;
 }
 
-/* Адаптыўныя загалоўкі для секцый */
 .section-title {
   font-weight: 900;
   text-transform: uppercase;
   font-style: italic;
   line-height: 1.1;
   color: #ffffff;
-  /* Памер для мабільных */
   font-size: 22px;
 
 }
 
-/* Выраўноўванне вышыні ўсіх слайдаў */
+
 .swiper-wrapper {
   display: flex !important;
 }
@@ -47,15 +40,12 @@ main {
   display: flex !important;
 }
 
-/* Гэта прымусіць унутраны блок з фонам #1a1a1a займаць усю вышыню слайда */
 .swiper-slide>div {
   width: 100%;
 }
 
 @media (min-width: 768px) {
-  main {
-    padding-top: 92px;
-  }
+
 
   .section-title {
     font-size: 32px;
