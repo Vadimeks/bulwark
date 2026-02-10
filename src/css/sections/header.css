@@ -1,12 +1,4 @@
 /* src/css/header.css */
-/* Пакідаем толькі для падтрымкі мабільных клікаў, калі яны ёсць */
-.dropdown-lang.is-active .dropdown-content {
-    display: block !important;
-    opacity: 1 !important;
-    visibility: visible !important;
-    transform: translateY(0);
-}
-
-.dropdown-lang.is-active #lang-btn i {
+#lang-dropdown.is-active #lang-btn i {
     transform: rotate(180deg);
 }

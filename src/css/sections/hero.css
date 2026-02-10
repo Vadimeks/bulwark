@@ -1,123 +1,48 @@
+/* src/css/sections/hero.css */
+
 .hero-bg {
-    background-color: #1a1a1a;
-    max-width: 350px;
-    margin: 0 auto;
-    position: relative;
-    overflow: hidden;
-    display: flex;
-    flex-direction: column;
-
-    /* 1. Задаем адступы, якія сфармуюць вышыню секцыі */
-    padding-top: 24px;
-    /* Адступ ад хэдэра */
-    padding-bottom: 24px;
-    /* Твой маржын пасля кнопак */
-
-    background-image:
-        linear-gradient(to bottom, rgba(26, 26, 26, 0.4) 0%, rgba(26, 26, 26, 0.9) 100%),
-        url('/src/assets/img/hero-bg-mob.webp');
-
-    /* 2. Карцінка заўсёды запаўняе 100% вышыні атрыманай секцыі */
     background-size: cover;
     background-position: center top;
     background-repeat: no-repeat;
+
+    /* МАБІЛКА: Градыент знізу ўверх, каб тэкст не зліваўся з тварамі */
+    background-image:
+        linear-gradient(to top, rgba(17, 17, 17, 1) 10%, rgba(17, 17, 17, 0.4) 50%, rgba(17, 17, 17, 0.2) 100%),
+        url('/src/assets/img/hero-bg-mob.webp');
 }
 
-.hero-bg h1 {
-    line-height: 1;
-    margin-bottom: 30px;
-    margin-top: 30px;
-    /* Цяпер рэгулюецца праз padding-top у .hero-bg */
-}
-
-.hero-bg p {
-    margin-bottom: 24px;
-}
-
-.hero-bg a {
-    padding: 12px 24px;
-    font-size: 12px;
-    width: 100%;
-    margin-bottom: 8px;
-}
-
-/* ПЛАНШЭТ (768px - 1279px) */
 @media (min-width: 768px) {
     .hero-bg {
-        max-width: 768px;
-        padding-top: 48px;
-        padding-bottom: 48px;
-
+        /* ПЛАНШЭТ І ДЭСКТОП: Градыент злева направа */
         background-image:
             linear-gradient(to right,
-                rgba(26, 26, 26, 0.95) 0%,
-                rgba(26, 26, 26, 0.7) 80%,
-                rgba(26, 26, 26, 0.05) 100%),
+                rgba(17, 17, 17, 1) 0%,
+                rgba(17, 17, 17, 0.9) 30%,
+                rgba(17, 17, 17, 0.4) 60%,
+                rgba(17, 17, 17, 0) 100%),
             url('/src/assets/img/hero-bg-desc.webp');
+
+        /* Захоўваем тваё пазіцыянаванне карцінкі */
         background-position: 0 0, calc(100% + 160px) -48px;
         background-size: 100% 100%, 140% auto;
-        background-repeat: no-repeat;
-    }
-
-    .hero-bg h1 {
-        font-size: 48px;
-        max-width: 450px;
-        margin-bottom: 24px;
-        margin-top: 24px;
-    }
-
-    .hero-bg p {
-        font-size: 16px;
-        max-width: 330px;
-        margin-bottom: 30px;
-    }
-
-    .hero-bg .container-custom a {
-        padding: 8px 16px;
-        font-size: 13px;
-        width: auto;
-        display: inline-block;
-        margin-bottom: 12px;
-        margin-top: 12px;
     }
 }
 
-/* ДЭСКТОП (1280px+) */
 @media (min-width: 1280px) {
     .hero-bg {
-        max-width: 1280px;
-        padding-top: 48px;
-        padding-bottom: 48px;
-
         background-image:
             linear-gradient(to right,
-                rgba(26, 26, 26, 0.95) 5%,
-                rgba(26, 26, 26, 0.6) 100%,
-                rgba(26, 26, 26, 0) 100%),
+                rgba(17, 17, 17, 1) 0%,
+                /* Поўны чорны пад тэкстам */
+                rgba(17, 17, 17, 0.95) 25%,
+                /* Трымаем шчыльнасць */
+                rgba(17, 17, 17, 0.5) 50%,
+                /* Пачынаем адкрываць фота */
+                rgba(17, 17, 17, 0) 80%),
+            /* Цалкам бачнае фота справа */
             url('/src/assets/img/hero-bg-desc.webp');
 
         background-position: 0 0, calc(100% + 260px) -210px;
         background-size: 100% 100%, 140% auto;
-    }
-
-    .hero-bg h1 {
-        font-size: 80px;
-        max-width: 700px;
-        margin-bottom: 24px;
-        margin-top: 0;
-    }
-
-    .hero-bg p {
-        font-size: 20px;
-        max-width: 400px;
-        margin-bottom: 24px;
-    }
-
-    .hero-bg .container-custom a {
-        padding: 12px 32px;
-        font-size: 14px;
-        width: auto;
-        margin-bottom: 12px;
-        margin-top: 12px;
     }
 }
