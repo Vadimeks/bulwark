@@ -19,18 +19,17 @@
                             <button id="print-material"
                                 class="flex items-center gap-2 text-[10px] font-black uppercase tracking-widest text-white/50 hover:text-red-600 transition-colors">
                                 <i class="fa-solid fa-print text-sm"></i>
-                                <span>Надрукаваць / PDF</span>
+                                <span data-i18n="modal.print">Надрукаваць / PDF</span>
                             </button>
                             <button id="copy-material"
                                 class="flex items-center gap-2 text-[10px] font-black uppercase tracking-widest text-white/50 hover:text-red-600 transition-colors">
                                 <i class="fa-solid fa-copy text-sm"></i>
-                                <span id="copy-text">Скапіяваць тэкст</span>
+                                <span id="copy-text" data-i18n="modal.copy">Скапіяваць тэкст</span>
                             </button>
                         </div>
-                        <button
-                            onclick="document.getElementById('material-modal').classList.add('hidden'); document.body.style.overflow='';"
+                        <button id="close-modal-text"
                             class="text-[10px] font-black tracking-[0.3em] text-white/50 hover:text-red-600 transition-colors uppercase italic">
-                            [ Закрыць ]
+                            [ <span data-i18n="modal.close">Закрыць</span> ]
                         </button>
                     </div>
                 </div>

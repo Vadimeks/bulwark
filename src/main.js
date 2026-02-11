@@ -11,7 +11,7 @@ import { initFullNewsGrid } from "./js/news-full.js";
 import { initGallerySlider } from "./js/gallery.js";
 import { initMaterials } from "./js/materials.js";
 import { initProjects } from "./js/projects.js";
-import { closeUniversalModal } from "./js/modal.js";
+import { initModalControl } from "./js/modal.js";
 
 document.addEventListener("DOMContentLoaded", () => {
   initHeader();
@@ -25,5 +25,5 @@ document.addEventListener("DOMContentLoaded", () => {
   initGallerySlider();
   initMaterials();
   initProjects();
-  closeUniversalModal();
+  initModalControl();
 });

@@ -1,20 +1,27 @@
 @media (min-width: 1280px) {
 
-    /* Калі свайпер знішчаны, прымушаем wrapper быць чыстым грыдом */
+    /* Ператвараем слайдэр у звычайную сетку на дэсктопе */
     section#news .news-slider .swiper-wrapper {
         display: grid !important;
         grid-template-columns: repeat(3, 1fr) !important;
         gap: 24px !important;
         width: 100% !important;
         transform: none !important;
-        flex-wrap: nowrap;
-        /* Каб не спрабаваў выстройвацца ў флекс */
+        flex-wrap: nowrap !important;
     }
 
-    /* Прымушаем слайды ігнараваць флекс-базу */
+    /* Слайды займаюць усю шырыню ячэйкі грыда */
     section#news .news-slider .swiper-slide {
         width: 100% !important;
+        height: auto !important;
+        /* Каб карткі былі адной вышыні */
         margin-right: 0 !important;
         flex-shrink: 1 !important;
+    }
+
+    /* Хаваем стрэлкі навігацыі на дэсктопе, бо яны не патрэбныя */
+    .news-prev,
+    .news-next {
+        display: none !important;
     }
 }

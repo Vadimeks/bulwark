@@ -14,55 +14,49 @@ export const initNavigation = () => {
     }
   };
 
-  // 2. Апрацоўка клікаў
   navLinks.forEach((link) => {
     link.addEventListener("click", (e) => {
       const href = link.getAttribute("href");
 
-      // Правяраем, ці гэта спасылка на якар на галоўнай старонцы
       if (href.startsWith("/#") || href.startsWith("#")) {
         const targetId = href.includes("#") ? "#" + href.split("#")[1] : null;
         const targetElement = targetId
           ? document.querySelector(targetId)
           : null;
 
-        // Калі мы на галоўнай і элемент існуе
         if (targetElement) {
           e.preventDefault();
           closeMenu();
 
-          // Плаўная пракрутка
-          const offset = 80; // Вышыня твайго хэдэра
-          const elementPosition = targetElement.getBoundingClientRect().top;
-          const offsetPosition = elementPosition + window.pageYOffset - offset;
+          // ПРАВІЛЬНЫ СКРОЛ:
+          const offset = 120; // Вышыня хэдэра з запасам
+          // Вылічваем абсалютную пазіцыю элемента адносна верху старонкі
+          const elementTop = targetElement.offsetTop;
 
           window.scrollTo({
-            top: offsetPosition,
+            top: elementTop - offset,
             behavior: "smooth",
           });
 
-          // Абнаўляем URL без перазагрузкі (апцыянальна)
           history.pushState(null, null, targetId);
         }
       }
     });
   });
 
-  // 3. Апрацоўка пераходу з іншай старонкі (пры загрузцы)
+  // 3. Апрацоўка пераходу з іншай старонкі
   if (window.location.hash) {
     const target = document.querySelector(window.location.hash);
     if (target) {
-      // Чакаем крыху, каб Vite/браўзер паспелі ўсё адрэндэрыць
       setTimeout(() => {
-        const offset = 80;
-        const elementPosition = target.getBoundingClientRect().top;
-        const offsetPosition = elementPosition + window.pageYOffset - offset;
+        const offset = 120;
+        const elementTop = target.offsetTop;
 
         window.scrollTo({
-          top: offsetPosition,
+          top: elementTop - offset,
           behavior: "smooth",
         });
-      }, 200);
+      }, 300); // Крыху больш часу для ініцыялізацыі
     }
   }
 };

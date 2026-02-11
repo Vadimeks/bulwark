@@ -54,10 +54,27 @@
   .section-title {
     @apply text-[22px] font-black uppercase italic leading-[1.1] text-white font-sans;
   }
+
+  section[id]::before {
+    content: "";
+    display: block;
+    /* Вышыня твайго хэдэра. Пастаў 100px або больш, пакуль не стане ідэальна */
+    height: 120px;
+    /* Адмоўны маржын "падцягвае" кантэнт назад, каб не было пустой прасторы */
+    margin-top: -120px;
+    visibility: hidden;
+    pointer-events: none;
+  }
 }
 
 @layer base {
+  html {
+    /* Плыўная пракрутка */
+    scroll-behavior: smooth;
+  }
+
   body {
     @apply bg-black font-sans text-white antialiased;
   }
+
 }
