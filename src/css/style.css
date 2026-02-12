@@ -9,6 +9,19 @@
     max-width: 100vw;
   }
 
+  .site-diagonal {
+    @apply fixed inset-0 pointer-events-none overflow-hidden;
+    z-index: 1;
+  }
+
+  .site-diagonal::after {
+    content: "";
+    @apply absolute top-0 right-70 w-1/5 h-full bg-red-600/7;
+
+    transform: skewX(12deg) translateX(50%);
+    height: 100vh;
+    position: fixed;
+  }
 
   @media (min-width: 350px) {
     .container-custom {
