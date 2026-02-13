@@ -1,88 +1,147 @@
 {
   "nav": {
-    "about": "About",
-    "activity": "Activity",
-    "volunteers": "Volunteers",
-    "partners": "Partners",
-    "support": "Support Us",
-    "materials": "Materials",
-    "news": "News",
+    "location": "Ukraine",
+    "about": "About the Fund",
+    "projects": "Projects",
+    "history_long": "Historical Overview",
     "reports": "Reports",
-    "history": "History",
-    "contacts": "Contacts"
-  },
-  "sidebar": {
-    "slogan": "Your reliable protection"
+    "materials": "Materials",
+    "requisites": "Bank Details",
+    "vow": "Warrior's Vow",
+    "gallery": "Gallery",
+    "news": "News",
+    "help": "Assistance",
+    "get_help": "Get Help",
+    "be_partner": "Help | Become a Partner",
+    "support": "Support"
   },
   "hero": {
     "title_part1": "Your",
-    "title_part2": "reliable",
-    "title_part3": "protection",
-    "description": "We help those who protect our peace. Bulwark Fund stands for transparency, sincerity, and effective support.",
-    "btn_get_help": "Get Help",
-    "support": "Support Us"
+    "title_part2": "Reliable",
+    "title_part3": "Bulwark",
+    "description": "Helping those who defend our peace. The Bulwark Fund stands for transparency, integrity, and effective support.",
+    "btn_get_help": "Get Help"
   },
   "about": {
-    "tag": "Mission & Vision",
+    "tag": "Mission and Vision",
     "title_top": "Two Nations",
     "title_bottom": "One Freedom",
-    "lead": "Bulwark is a space where a shared past and the friendship of nations become the foundation for a common future.",
-    "p1": "We are building a support network that will allow Belarusians to one day return home and bring with them the experience and values needed to build a new, free country.",
-    "p2": "An investment in our fund is an investment in the stability of all of Europe. A democratic Belarus is key to the security of the entire region.",
+    "lead": "«Bulwark» is a space where shared history and friendship between nations become the foundation for a common future.",
+    "p1": "We are building a support network that will one day allow Belarusians to return home and bring the experience and values needed to build a new, free country.",
+    "p2": "Investing in our fund is an investment in the stability of all Europe. A democratic Belarus is key to the security of the entire region.",
     "stat_tag_1": "Status",
-    "stat_title_1": "Active Foundation",
-    "stat_desc_1": "We have a network of experts, a chatbot, and direct contact with volunteers.",
+    "stat_title_1": "Active Fund",
+    "stat_desc_1": "We have a network of experts, a chatbot, and direct contact with fighters.",
     "stat_tag_2": "Goal",
-    "stat_title_2": "Return Home",
+    "stat_title_2": "Returning Home",
     "stat_desc_2": "Every dictator falls. We are preparing the builders of a new Belarus.",
     "quote": "\"Freedom has no borders, and tyranny is a common threat to the entire region.\""
   },
   "history": {
-    "tag": "The Human Factor",
-    "title": "Our History",
-    "alisa_label": "Alisa / Kharkiv",
-    "vlad_label": "Vlad / Minsk",
-    "link_youtube": "Watch the film about 'Sonya'",
-    "link_viasna": "History of Repressions",
-    "lead": "The story of Bulwark began not in an office, but through the meeting of a Ukrainian woman from Kharkiv and a Belarusian volunteer.",
+    "tag": "Human Factor",
+    "title": "Our Story",
+    "lead": "The story of «Bulwark» didn't start in an office, but through a meeting between a Ukrainian woman from Kharkiv and a Belarusian fighter.",
+    "alisa_label": "Alisa <br> Kharkiv",
+    "vlad_label": "Vlad («Sonya»)<br> Minsk",
+    "link_youtube": "Watch the film about «Sonya»",
+    "link_viasna": "History of repression",
     "alisa_name": "Alisa Kosenko",
-    "alisa_text": "was born in Kharkiv. Until February 24, 2022, she lived a normal life, but after the invasion began, she went through shelling and evacuation. She returned to Ukraine with a firm decision: this is her home, and she will not trade it for anything.",
-    "vlad_intro": "Her husband,",
-    "vlad_name": "Vladislav Solovey (callsign 'Sonya')",
-    "vlad_text": "is originally from Minsk. In 2020, he endured repressions and torture at Akrescina for participating in peaceful protests. With the start of the full-scale war, he did not hesitate to fight for the freedom of Ukraine and the future of a free Belarus.",
-    "vlad_path": "Vlad went from being an infantryman in the 'Litvin' battalion to a reconnaissance group commander in the Kalinouski Regiment. Currently, he serves in the reconnaissance battalion of the 'Khartia' brigade.",
-    "slogan_label": "Our slogan:",
+    "alisa_text": "was born in Kharkiv. Until February 24, 2022, she lived an ordinary life, but after the invasion began, she went through shelling and evacuation. She returned to Ukraine with a firm decision: this is her home.",
+    "vlad_intro": "Her loved one,",
+    "vlad_name": "Vladislav Salavei (callsign «Sonya»)",
+    "vlad_text": "is originally from Minsk. In 2020, he endured repression and torture at Akrestsina. With the start of the full-scale war, he did not hesitate to go and fight for Ukraine's freedom.",
+    "slogan_label": "Our Slogan",
     "slogan_text": "Two nations — one freedom",
-    "conclusion_1": "Today, they are building the Bulwark Fund together, uniting those who believe that freedom is everyone's right. They work for the day when they can say:",
-    "conclusion_highlight": "'We are going back. We are building a new Belarus!'"
-  },
-  "contacts": {
-    "title": "Contacts",
-    "socials": "Social Media"
-  },
-  "activity": {
-    "tag": "Areas of work",
-    "title": "Systemic Support",
-    "item1_title": "Legal Shield",
-    "item1_text": "Legalization in Ukraine (Residency permits), recovery of documents, and protection against extradition or persecution by the RB regime.",
-    "item2_title": "Psychological Support",
-    "item2_text": "Combat stress and PTSD therapy, working with 'survivor guilt,' and assistance in social adaptation after the front line.",
-    "item3_title": "Investment in the Future",
-    "item3_text": "Preserving human capital for a new Belarus: supporting those who will become leaders and builders of a free country tomorrow."
+    "conclusion_1": "Today they are building the «Bulwark» fund together, uniting those who believe: freedom is everyone's right.",
+    "conclusion_highlight": "«We are returning. We are building a new Belarus!»"
   },
   "volunteers": {
-    "title": "Are you at the front?",
-    "text": "We know that war is not only about battles, but also a legal labyrinth and a psychological challenge. If you need legalization or support — we are here for you."
-  },
-  "partners": {
-    "text": "We are always open to cooperation with organizations, foundations, and businesses. Together we can do more.",
-    "btn": "Suggest cooperation"
+    "tag": "Assistance",
+    "title": "Help for Fighters",
+    "crit1_title": "For whom:",
+    "crit1_text": "Only for Belarusian fighters (active military and veterans) who are fighting or have fought as part of the AFU / NGU.",
+    "crit2_title": "What we provide:",
+    "crit2_text": "Consultations on legalization, document restoration, professional psychological support.",
+    "warning": "Important: We do not collect funds for weapons or ammunition. Our task is your legal and mental status.",
+    "name_placeholder": "Name / Callsign",
+    "status_select": "Status (select from list)",
+    "status_active": "Active duty",
+    "status_veteran": "Veteran",
+    "needs_placeholder": "What help is needed? (min. 10 characters)",
+    "contact_placeholder": "Telegram @user or email",
+    "btn_send": "Send Request"
   },
   "forms": {
-    "unit": "Unit / Callsign",
-    "needs": "What exactly do you need?",
-    "contact": "Telegram for contact",
-    "org": "Organization",
-    "btn_request": "Send request"
+    "success_toast": "✅ Sent!",
+    "error_toast": "❌ Error.",
+    "tg_help_title": "🆘 HELP REQUEST",
+    "tg_partner_title": "🤝 NEW PARTNERSHIP OFFER",
+    "tg_name": "👤 Name",
+    "tg_status": "🎖 Status",
+    "tg_contact": "📱 Contact",
+    "tg_needs": "📝 Need",
+    "tg_org": "🏢 Organization",
+    "tg_message": "💬 Message",
+    "org": "Organization / Name",
+    "contact": "Email / Telegram",
+    "message": "How can we collaborate? (min. 10 characters)"
+  },
+  "activity": {
+    "tag": "Fields of Work",
+    "title": "Systemic Assistance",
+    "item1_title": "Legal Shield",
+    "item1_text": "Legalization in Ukraine, protection from extradition, and document restoration for those left without legal status.",
+    "item2_title": "Psychological Support",
+    "item2_text": "Qualified help for PTSD, combat stress, and adaptation of warriors to civilian life.",
+    "item3_title": "Investment in the Future",
+    "item3_text": "Preparing personnel reserves for a new Belarus and launching humanitarian programs for fighters' families."
+  },
+  "partners": {
+    "title": "How to Help the Fund",
+    "type1_title": "For Donors",
+    "type1_text": "Financial support to pay for lawyers, psychologists, and office rent.",
+    "type2_title": "For Experts",
+    "type2_text": "If you are a lawyer or psychologist and ready to consult pro bono — join us.",
+    "type3_title": "For Business",
+    "type3_text": "Discounts on services, rehabilitation programs, or locations for meetings.",
+    "cta": "Have an offer? Contact us",
+    "btn": "Become a Partner"
+  },
+  "donate": {
+    "title": "Funding Victory",
+    "support_fund": "Support the Fund",
+    "support_fund_text": "Administrative expenses, legal shield, logistics, and institutional development. A solid base for our work.",
+    "help_soldiers": "Help the Soldiers",
+    "help_soldiers_text": "Direct purchase of equipment, medicine, and technical supplies for Belarusian fighters at the front.",
+    "requisites_btn": "Bank Details",
+    "alert_enter_amount": "Please enter an amount",
+    "alert_redirect": "Redirecting to payment:",
+    "alert_no_gateway": "(Gateway will appear here once the key is connected)",
+    "quick_payment": "Quick Payment (UAH)",
+    "custom_amount": "Custom Amount",
+    "pay_now": "Pay Now",
+    "redirect_note": "* you will be redirected to the payment gateway page",
+    "bank_details": "Bank Details",
+    "purpose_title": "Mandatory field:",
+    "purpose_label": "Payment purpose:"
+  },
+  "news": {
+    "title": "Latest Events",
+    "all_news_btn": "All News",
+    "read_more": "Read more"
+  },
+  "common": {
+    "slogan": "Your Reliable Bulwark"
+  },
+  "footer": {
+    "nav_title": "Navigation",
+    "privacy": "Privacy Policy",
+    "cookies": "Cookies"
+  },
+  "modal": {
+    "print": "Print",
+    "copy": "Copy",
+    "copied": "Copied!",
+    "close": "Close"
   }
 }
