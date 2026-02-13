@@ -84,15 +84,23 @@
 
         <div class="max-w-3xl mx-auto bg-black/50 p-8 md:p-12 border border-white/10 relative">
             <div class="absolute top-0 left-1/2 -translate-x-1/2 w-20 h-1 bg-red-600"></div>
+
             <p class="text-white mb-8 uppercase font-black text-xs tracking-[0.3em] text-center"
-                data-i18n="partners.cta">Маеце прапанову? Напішыце нам</p>
+                data-i18n="partners.cta">Маеце
+                прапанову? Напішыце нам</p>
+
             <form class="grid grid-cols-1 md:grid-cols-2 gap-5">
                 <input type="text" data-i18n-placeholder="forms.org" placeholder="Арганізацыя / Імя"
                     class="bg-black border border-white/10 p-4 text-white text-sm outline-none focus:border-red-600 transition-colors font-medium">
+
                 <input type="text" data-i18n-placeholder="forms.contact" placeholder="Email / Telegram"
                     class="bg-black border border-white/10 p-4 text-white text-sm outline-none focus:border-red-600 transition-colors font-medium">
+
+                <textarea rows="3" data-i18n-placeholder="forms.message" placeholder="Як мы можам супрацоўнічаць?"
+                    class="md:col-span-2 bg-black border border-white/10 p-4 text-white text-sm outline-none focus:border-red-600 transition-all font-medium resize-none tracking-wider"></textarea>
+
                 <button type="submit" data-i18n="partners.btn"
-                    class="md:col-span-2 bg-red-600 py-4 text-white font-black uppercase tracking-widest text-xs hover:bg-white hover:text-black transition-all shadow-lg">
+                    class="md:col-span-2 bg-red-600 py-5 text-white font-black uppercase tracking-widest text-xs hover:bg-white hover:text-black transition-all shadow-lg">
                     Стаць партнёрам
                 </button>
             </form>
