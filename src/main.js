@@ -13,6 +13,7 @@ import { initMaterials } from "./js/materials.js";
 import { initProjects } from "./js/projects.js";
 import { initModalControl } from "./js/modal.js";
 import { initDonationSection } from "./js/donation-section.js";
+import { initForms } from "./js/forms.js";
 
 document.addEventListener("DOMContentLoaded", () => {
   initHeader();
@@ -28,4 +29,5 @@ document.addEventListener("DOMContentLoaded", () => {
   initProjects();
   initModalControl();
   initDonationSection();
+  initForms();
 });
