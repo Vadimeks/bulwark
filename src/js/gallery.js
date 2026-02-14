@@ -21,8 +21,8 @@ export async function initGallerySlider() {
         (photo) => `
       <div class="swiper-slide h-auto">
           <a href="/img/gallery/${photo.src}" 
-             data-pswp-width="1024" 
-             data-pswp-height="1024"
+             data-pswp-width="700" 
+             data-pswp-height="700"
              target="_blank"
              class="pswp-link block group relative overflow-hidden border border-white/10 bg-gray-900 aspect-square">
               <img src="/img/gallery/${photo.src}" 
