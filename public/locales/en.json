@@ -173,5 +173,11 @@
     "support_bot": "Support Bot",
     "urgent_link": "Urgent contact",
     "confidential": "Confidential"
+  },
+  "gallery": {
+    "title_page": "Gallery | Bulwark",
+    "copyright_text": "All gallery materials are the intellectual property of Bulwark. Unauthorized use of these materials is prohibited.",
+    "history_text": "These shots are a living history of the struggle of Belarusian volunteers.",
+    "victory_text": "Together to victory."
   }
 }
