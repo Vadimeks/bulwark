@@ -111,7 +111,7 @@
     "title": "Funding Victory",
     "support_fund": "Support the Fund",
     "support_fund_text": "Administrative expenses, legal shield, logistics, and institutional development. A solid base for our work.",
-    "help_soldiers": "Help the Soldiers",
+    "help_soldiers": "Help the Fighters",
     "help_soldiers_text": "Direct purchase of equipment, medicine, and technical supplies for Belarusian fighters at the front.",
     "requisites_btn": "Bank Details",
     "alert_enter_amount": "Please enter an amount",
@@ -143,5 +143,11 @@
     "copy": "Copy",
     "copied": "Copied!",
     "close": "Close"
+  },
+  "contacts": {
+    "title": "Contacts",
+    "support_bot": "Support Bot",
+    "urgent_link": "Urgent contact",
+    "confidential": "Confidential"
   }
 }
