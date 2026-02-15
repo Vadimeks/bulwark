@@ -152,7 +152,8 @@
   "news": {
     "title": "Latest Events",
     "all_news_btn": "All News",
-    "read_more": "Read more"
+    "read_more": "Read more",
+    "news-full": "News (Archive)"
   },
   "common": {
     "slogan": "Your Reliable Bulwark"
