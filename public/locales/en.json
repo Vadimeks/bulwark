@@ -79,22 +79,6 @@
     "sec2_p3": "Today, history again puts us before a common enemy, and our response to this challenge will determine the future of the entire region for centuries to come.",
     "sec3_p1": "August 9, 2020, was a turning point. The regime responded with terror: tens of thousands of arrests, torture at Akrestsina. As of February 2026, more than 1,400 political prisoners remain behind bars."
   },
-  "volunteers": {
-    "tag": "Assistance",
-    "title": "Help for Fighters",
-    "crit1_title": "For whom:",
-    "crit1_text": "Only for Belarusian fighters (active military and veterans) who are fighting or have fought as part of the AFU / NGU.",
-    "crit2_title": "What we provide:",
-    "crit2_text": "Consultations on legalization, document restoration, professional psychological support.",
-    "warning": "Important: We do not collect funds for weapons or ammunition. Our task is your legal and mental status.",
-    "name_placeholder": "Name / Callsign",
-    "status_select": "Status (select from list)",
-    "status_active": "Active duty",
-    "status_veteran": "Veteran",
-    "needs_placeholder": "What help is needed? (min. 10 characters)",
-    "contact_placeholder": "Telegram @user or email",
-    "btn_send": "Send Request"
-  },
   "forms": {
     "success_toast": "✅ Sent!",
     "error_toast": "❌ Error.",
@@ -274,5 +258,40 @@
     "purpose_label": "Payment Purpose (mandatory for transfer):",
     "accounts_title": "Accounts for transfer",
     "crypto_title": "Cryptocurrency Accounts"
+  },
+  "get_help": {
+    "page_title": "Get Help | Bulwark",
+    "tag": "Support Service",
+    "main_title": "Help for volunteers",
+    "hero_text": "We support Belarusian volunteers and veterans (AFU / NGU) in critical matters of status and health.",
+    "form_section_title": "Submit a request",
+    "step1_title": "Secure connection",
+    "step1_text": "All data is transmitted through secure channels. You can use a callsign.",
+    "step2_title": "Processing",
+    "step2_text": "Our lawyers or psychologists will contact you within 48 hours.",
+    "encrypted_label": "Protected by end-to-end encryption"
+  },
+  "volunteers": {
+    "tag": "Assistance",
+    "title": "Assistance to Volunteers",
+    "crit1_title": "For whom:",
+    "crit1_text": "Only for Belarusian volunteers (active military and veterans) who are fighting or have fought as part of the AFU / NGU.",
+    "crit1_text_short": "Active military and Belarusian veterans.",
+    "crit2_title": "What we provide:",
+    "crit2_text": "Legalization consultations, document recovery, professional psychological support.",
+    "crit2_text_short": "Legalization, extradition, PTSD support, document recovery.",
+    "warning": "Important: We do not collect funds for weapons or ammunition. Our task is your legal and mental status.",
+    "name_label": "Name / Callsign",
+    "name_placeholder": "Name / Callsign",
+    "status_label": "Status",
+    "status_select": "Status (select from list)",
+    "status_active": "Active Military",
+    "status_veteran": "Veteran",
+    "status_family": "Volunteer's Family",
+    "needs_label": "Essence of the problem",
+    "needs_placeholder": "What help is needed? (min. 10 characters)",
+    "contact_label": "Contact (Signal / Telegram)",
+    "contact_placeholder": "Telegram @user or Signal",
+    "btn_send": "Submit Request"
   }
 }
