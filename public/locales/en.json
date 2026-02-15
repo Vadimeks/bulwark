@@ -325,5 +325,11 @@
     "btn_submit": "Become a partner",
     "btn_donate": "Support",
     "btn_requisites": "View Details"
+  },
+  "materials": {
+    "label": "Materials",
+    "title": "Knowledge Base",
+    "read_more": "Read more",
+    "back_to_list": "Back to list"
   }
 }
