@@ -1,31 +1,14 @@
 import { t } from "./i18n.js";
 
-const TELEGRAM_TOKEN = import.meta.env.VITE_TELEGRAM_TOKEN;
-const TELEGRAM_CHAT_ID = import.meta.env.VITE_TELEGRAM_CHAT_ID;
+// Выдаляем токен і ID адсюль. Выкарыстоўваем адрас вашага бекенда.
+const API_URL = import.meta.env.VITE_API_URL || "http://localhost:3000";
 
 export function initForms() {
   // 1. Форма Дапамогі
-  setupForm(
-    "help-form",
-    (data) => `
-<b>${t("forms.tg_help_title")}</b>
-<b>${t("volunteers.name_placeholder")}:</b> ${data.user_name}
-<b>${t("volunteers.status_select")}:</b> ${data.user_status}
-<b>${t("volunteers.contact_placeholder")}:</b> ${data.user_contact}
-<b>${t("volunteers.needs_placeholder")}:</b> ${data.user_needs}
-  `,
-  );
+  setupForm("help-form", "Дапамога добраахвотнікам");
 
   // 2. Форма Партнёраў
-  setupForm(
-    "partners-form",
-    (data) => `
-<b>${t("forms.tg_partner_title")}</b>
-<b>${t("forms.org")}:</b> ${data.org_name}
-<b>${t("forms.contact")}:</b> ${data.contact}
-<b>${t("forms.message")}:</b> ${data.message}
-  `,
-  );
+  setupForm("partners-form", "Стаць партнёрам");
 
   // 3. Жывая валідацыя Дапамогі
   const helpForm = document.getElementById("help-form");
@@ -77,7 +60,7 @@ export function initForms() {
   }
 }
 
-function setupForm(formId, templateFn) {
+function setupForm(formId, formDisplayName) {
   const form = document.getElementById(formId);
   if (!form) return;
 
@@ -95,7 +78,8 @@ function setupForm(formId, templateFn) {
       loader.style.display = "inline-block";
     }
 
-    const success = await sendToTelegram(templateFn(data));
+    // Адпраўляем на ваш бекенд
+    const success = await sendToBackend(formDisplayName, data);
 
     if (success) {
       showToast(t("forms.success_toast"), "success");
@@ -127,22 +111,19 @@ function setupForm(formId, templateFn) {
   });
 }
 
-async function sendToTelegram(text) {
+async function sendToBackend(formName, formData) {
   try {
-    const response = await fetch(
-      `https://api.telegram.org/bot${TELEGRAM_TOKEN}/sendMessage`,
-      {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          chat_id: TELEGRAM_CHAT_ID,
-          text,
-          parse_mode: "HTML",
-        }),
-      },
-    );
+    const response = await fetch(`${API_URL}/api/contact`, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        formName,
+        formData,
+      }),
+    });
     return response.ok;
-  } catch {
+  } catch (error) {
+    console.error("Backend connection error:", error);
     return false;
   }
 }
