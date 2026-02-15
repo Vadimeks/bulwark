@@ -5,6 +5,7 @@ const fetch = require("node-fetch");
 const rateLimit = require("express-rate-limit");
 
 const app = express();
+app.set("trust proxy", 1);
 app.use(cors());
 app.use(express.json());
 
@@ -13,7 +14,7 @@ const { TELEGRAM_TOKEN, TELEGRAM_CHAT_ID, PORT = 3000 } = process.env;
 // Абарона ад спаму
 const apiLimiter = rateLimit({
   windowMs: 15 * 60 * 1000,
-  max: 5,
+  max: 10,
   message: {
     success: false,
     error: "Занадта шмат запытаў. Паспрабуйце пазней.",
