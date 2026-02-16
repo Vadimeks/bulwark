@@ -1,16 +1,12 @@
 import { t } from "./i18n.js";
 
-// Выдаляем токен і ID адсюль. Выкарыстоўваем адрас вашага бекенда.
 const API_URL = import.meta.env.VITE_API_URL || "";
 
 export function initForms() {
-  // 1. Форма Дапамогі
   setupForm("help-form", "Дапамога добраахвотнікам");
-
-  // 2. Форма Партнёраў
   setupForm("partners-form", "Стаць партнёрам");
 
-  // 3. Жывая валідацыя Дапамогі
+  // --- Жывая валідацыя Дапамогі ---
   const helpForm = document.getElementById("help-form");
   if (helpForm) {
     const inputs = {
@@ -36,7 +32,7 @@ export function initForms() {
     });
   }
 
-  // 4. Жывая валідацыя Партнёраў
+  // --- Жывая валідацыя Партнёраў ---
   const partnersForm = document.getElementById("partners-form");
   if (partnersForm) {
     const inputs = {
@@ -71,6 +67,7 @@ function setupForm(formId, formDisplayName) {
     const formData = new FormData(form);
     const data = Object.fromEntries(formData.entries());
 
+    // 1. Уключаем візуал загрузкі
     btn.disabled = true;
     btn.classList.add("opacity-50", "cursor-not-allowed");
     if (loader) {
@@ -78,30 +75,21 @@ function setupForm(formId, formDisplayName) {
       loader.style.display = "inline-block";
     }
 
-    // Адпраўляем на ваш бекенд
+    // 2. ВЫКЛІКАЕМ адпраўку (вось тут была памылка)
     const success = await sendToBackend(formDisplayName, data);
 
+    // 3. Рэакцыя на вынік
     if (success) {
-      showToast(t("forms.success_toast"), "success");
+      showToast(t("footer.form_success") || "Дзякуй! Мы з вамі звяжамся.");
       form.reset();
-      [
-        "help-step-2",
-        "help-step-3",
-        "help-step-4",
-        "partner-step-2",
-        "partner-step-3",
-      ].forEach((id) => {
-        document
-          .getElementById(id)
-          ?.classList.add("opacity-40", "pointer-events-none");
-      });
-      form
-        .querySelectorAll("input, textarea, select")
-        .forEach((el) => el.blur());
     } else {
-      showToast(t("forms.error_toast"), "error");
+      showToast(
+        t("footer.form_error") || "Памылка адпраўкі. Паспрабуйце пазней.",
+        "error",
+      );
     }
 
+    // 4. Выключаем візуал загрузкі
     btn.disabled = false;
     btn.classList.remove("opacity-50", "cursor-not-allowed");
     if (loader) {
@@ -111,16 +99,21 @@ function setupForm(formId, formDisplayName) {
   });
 }
 
+// Асобная функцыя адпраўкі (адзіная на ўвесь файл)
 async function sendToBackend(formName, formData) {
   try {
+    // Калі мы на Vercel, API_URL будзе пустым радам, і запыт пойдзе на /api/contact
     const response = await fetch(`${API_URL}/api/contact`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({
-        formName,
-        formData,
-      }),
+      body: JSON.stringify({ formName, formData }),
     });
+
+    if (!response.ok) {
+      const errorText = await response.text();
+      console.error("Server responded with error:", errorText);
+    }
+
     return response.ok;
   } catch (error) {
     console.error("Backend connection error:", error);
