@@ -1,7 +1,7 @@
 import { t } from "./i18n.js";
 
 // Выдаляем токен і ID адсюль. Выкарыстоўваем адрас вашага бекенда.
-const API_URL = import.meta.env.VITE_API_URL || "http://localhost:3000";
+const API_URL = import.meta.env.VITE_API_URL || "";
 
 export function initForms() {
   // 1. Форма Дапамогі
