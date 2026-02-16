@@ -1,17 +1,17 @@
-require("dotenv").config();
-const express = require("express");
-const cors = require("cors");
-const fetch = require("node-fetch");
-const rateLimit = require("express-rate-limit");
+import dotenv from "dotenv";
+dotenv.config();
+import express from "express";
+import cors from "cors";
+import fetch from "node-fetch";
+import rateLimit from "express-rate-limit";
 
 const app = express();
 app.set("trust proxy", 1);
 app.use(cors());
 app.use(express.json());
 
-const { TELEGRAM_TOKEN, TELEGRAM_CHAT_ID, PORT = 3000 } = process.env;
+const { TELEGRAM_TOKEN, TELEGRAM_CHAT_ID } = process.env;
 
-// Абарона ад спаму
 const apiLimiter = rateLimit({
   windowMs: 15 * 60 * 1000,
   max: 10,
@@ -23,14 +23,11 @@ const apiLimiter = rateLimit({
 
 app.use("/api/contact", apiLimiter);
 
-// Слоўнік для перакладу тэхнічных палёў у прыгожы выгляд
 const fieldLabels = {
-  // Палі формы дапамогі
   user_name: "👤 Імя / Пазыўны",
   user_status: "🎖 Статус",
   user_needs: "📝 Патрэба",
   user_contact: "📱 Кантакт",
-  // Палі формы партнёрства
   org_name: "🏢 Арганізацыя / Імя",
   contact: "📱 Email / Telegram",
   message: "💬 Паведамленне",
@@ -40,7 +37,6 @@ app.post("/api/contact", async (req, res) => {
   try {
     const { formName, formData } = req.body;
 
-    // Вызначаем загаловак і эмодзі ў залежнасці ад формы
     let header = "";
     if (formName.includes("Дапамога")) {
       header = "🆘 <b>ЗАПЫТ НА ДАПАМОГУ</b>";
@@ -52,9 +48,8 @@ app.post("/api/contact", async (req, res) => {
 
     let messageText = `${header}\n\n`;
 
-    // Фармуем спіс палёў
     for (const [key, value] of Object.entries(formData)) {
-      const label = fieldLabels[key] || key; // Калі паля няма ў слоўніку, пакідаем як ёсць
+      const label = fieldLabels[key] || key;
       if (value) {
         messageText += `${label}: ${value}\n`;
       }
@@ -85,6 +80,5 @@ app.post("/api/contact", async (req, res) => {
   }
 });
 
-app.listen(PORT, () => {
-  console.log(`✅ Server running on http://localhost:${PORT}`);
-});
+// На Vercel не патрэбны app.listen, але экспарт абавязковы
+export default app;
