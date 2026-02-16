@@ -6,51 +6,63 @@ export function initForms() {
   setupForm("help-form", "Дапамога добраахвотнікам");
   setupForm("partners-form", "Стаць партнёрам");
 
-  // --- Жывая валідацыя Дапамогі ---
+  // --- Валідацыя формы Дапамогі ---
   const helpForm = document.getElementById("help-form");
   if (helpForm) {
-    const inputs = {
-      name: helpForm.querySelector('[name="user_name"]'),
-      status: helpForm.querySelector('[name="user_status"]'),
-      needs: helpForm.querySelector('[name="user_needs"]'),
-    };
-    const steps = {
-      2: document.getElementById("help-step-2"),
-      3: document.getElementById("help-step-3"),
-      4: document.getElementById("help-step-4"),
-    };
+    const inputName = helpForm.querySelector('[name="user_name"]');
+    const inputStatus = helpForm.querySelector('[name="user_status"]');
+    const inputNeeds = helpForm.querySelector('[name="user_needs"]');
+
+    const step2 = document.getElementById("help-step-2");
+    const step3 = document.getElementById("help-step-3");
+    const step4 = document.getElementById("help-step-4");
 
     helpForm.addEventListener("input", () => {
-      if (inputs.name?.value.trim().length >= 2)
-        steps[2]?.classList.remove("opacity-40", "pointer-events-none");
-      else steps[2]?.classList.add("opacity-40", "pointer-events-none");
+      // Крок 2 адкрываецца, калі імя >= 2 сімвалы
+      if (inputName && inputName.value.trim().length >= 2) {
+        step2?.classList.remove("opacity-40", "pointer-events-none");
+      } else {
+        step2?.classList.add("opacity-40", "pointer-events-none");
+      }
 
-      if (inputs.status?.value !== "")
-        steps[3]?.classList.remove("opacity-40", "pointer-events-none");
-      if (inputs.needs?.value.trim().length >= 10)
-        steps[4]?.classList.remove("opacity-40", "pointer-events-none");
+      // Крок 3 адкрываецца, калі выбраны статус
+      if (inputStatus && inputStatus.value !== "") {
+        step3?.classList.remove("opacity-40", "pointer-events-none");
+      }
+
+      // Крок 4 (кнопка) адкрываецца, калі патрэбы >= 10 сімвалаў
+      if (inputNeeds && inputNeeds.value.trim().length >= 10) {
+        step4?.classList.remove("opacity-40", "pointer-events-none");
+      } else {
+        step4?.classList.add("opacity-40", "pointer-events-none");
+      }
     });
   }
 
-  // --- Жывая валідацыя Партнёраў ---
+  // --- Валідацыя формы Партнёраў ---
   const partnersForm = document.getElementById("partners-form");
   if (partnersForm) {
-    const inputs = {
-      org: partnersForm.querySelector('[name="org_name"]'),
-      contact: partnersForm.querySelector('[name="contact"]'),
-    };
-    const steps = {
-      2: document.getElementById("partner-step-2"),
-      3: document.getElementById("partner-step-3"),
-    };
+    const inputOrg = partnersForm.querySelector('[name="org_name"]');
+    const inputContact = partnersForm.querySelector('[name="contact"]');
+
+    const step2 = document.getElementById("partner-step-2");
+    const step3 = document.getElementById("partner-step-3");
 
     partnersForm.addEventListener("input", () => {
-      if (inputs.org?.value.trim().length >= 2)
-        steps[2]?.classList.remove("opacity-40", "pointer-events-none");
-      else steps[2]?.classList.add("opacity-40", "pointer-events-none");
+      if (inputOrg && inputOrg.value.trim().length >= 2) {
+        step2?.classList.remove("opacity-40", "pointer-events-none");
+      } else {
+        step2?.classList.add("opacity-40", "pointer-events-none");
+      }
 
-      if (inputs.contact?.validity.valid && inputs.contact?.value.length > 3) {
-        steps[3]?.classList.remove("opacity-40", "pointer-events-none");
+      if (
+        inputContact &&
+        inputContact.validity.valid &&
+        inputContact.value.length > 3
+      ) {
+        step3?.classList.remove("opacity-40", "pointer-events-none");
+      } else {
+        step3?.classList.add("opacity-40", "pointer-events-none");
       }
     });
   }
@@ -77,10 +89,13 @@ function setupForm(formId, formDisplayName) {
       const msg = t("forms.success_toast");
       showToast(msg === "forms.success_toast" ? "✅ Адпраўлена!" : msg);
       form.reset();
-      // Скідаем крокі пасля ачысткі
-      document.querySelectorAll('[id*="-step-"]').forEach((s) => {
-        if (!s.id.includes("step-1"))
+
+      // Скідваем візуальны стан крокаў (акрамя першага)
+      const allSteps = form.querySelectorAll('[id*="-step-"]');
+      allSteps.forEach((s) => {
+        if (!s.id.includes("step-1")) {
           s.classList.add("opacity-40", "pointer-events-none");
+        }
       });
     } else {
       const errMsg = t("forms.error_toast");
@@ -105,13 +120,27 @@ async function sendToBackend(formName, formData) {
     });
     return response.ok;
   } catch (error) {
+    console.error("Error:", error);
     return false;
   }
 }
 
 function showToast(message, type = "success") {
-  let container =
-    document.getElementById("toast-container") || createContainer();
+  let container = document.getElementById("toast-container");
+  if (!container) {
+    container = document.createElement("div");
+    container.id = "toast-container";
+    Object.assign(container.style, {
+      position: "fixed",
+      top: "20px",
+      right: "20px",
+      zIndex: "1000",
+      display: "flex",
+      flexDirection: "column",
+    });
+    document.body.appendChild(container);
+  }
+
   const toast = document.createElement("div");
   toast.innerText = message;
   const color = type === "success" ? "#059669" : "#dc2626";
@@ -139,19 +168,4 @@ function showToast(message, type = "success") {
     toast.style.opacity = "0";
     setTimeout(() => toast.remove(), 400);
   }, 4000);
-}
-
-function createContainer() {
-  const c = document.createElement("div");
-  c.id = "toast-container";
-  Object.assign(c.style, {
-    position: "fixed",
-    top: "20px",
-    right: "20px",
-    zIndex: "1000",
-    display: "flex",
-    flexDirection: "column",
-  });
-  document.body.appendChild(c);
-  return c;
 }
