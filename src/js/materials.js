@@ -38,22 +38,22 @@ export async function initMaterials() {
         .map(
           (item) => `
           <div id="${item.id}" class="flex flex-col md:flex-row border border-white/5 bg-[#050505] hover:border-red-600/30 transition-all group overflow-hidden">
-              <div class="md:w-1/4 p-4 lg:p-8 border-b md:border-b-0 md:border-r border-white/5 flex flex-col justify-center bg-[#050505]">
-                  <span class="text-red-600 font-black uppercase italic text-xl md:text-sm xl:text-2xl tracking-tighter break-words">
+              <div class="md:w-1/4 p-4 md:p-6 border-b md:border-b-0 md:border-r border-white/5 flex flex-col items-start justify-start bg-[#050505]">
+                  <span class="text-red-600 font-black uppercase italic text-sm xl:text-lg tracking-tighter break-words">
                       ${item.category}
                   </span>
               </div>
               
-              <div class="md:w-3/4 p-4 md:p-8 flex flex-col justify-between">
+              <div class="md:w-3/4 p-4 md:p-6 flex flex-col justify-between">
                   <div>
-                      <h4 class="text-white font-bold mb-3 text-lg md:text-xl uppercase tracking-tight group-hover:text-red-600 transition-colors">
+                      <h4 class="text-white font-black mb-3 text-sm xl:text-lg uppercase tracking-tight group-hover:text-red-600 transition-colors">
                           ${item.title}
                       </h4>
                       <p class="text-gray-500 text-sm mb-8 leading-relaxed line-clamp-2">
                           ${item.short}
                       </p>
                   </div>
-                  <button class="read-more-btn text-white font-black uppercase text-[10px] tracking-[0.2em] flex items-center gap-3 hover:text-red-600 transition-all" 
+                  <button class="read-more-btn text-red-600 font-black text-xs tracking-[0.3em] flex items-center gap-3 hover:text-white transition-all" 
                           data-id="${item.id}">
                       <span data-i18n="materials.read_more">${t("materials.read_more") || "Чытаць матэрыял"}</span> 
                       <i class="fa-solid fa-arrow-right text-[8px]"></i>
