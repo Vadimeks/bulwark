@@ -1,14 +1,71 @@
-/* Падключаем шрыфт */
+/* ==========================================================================
+   1. НАЛАДЫ І ШРЫФТЫ
+   ========================================================================== */
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap");
 
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-black font-sans text-white antialiased;
+    animation: fadeInPage 0.5s ease-in-out;
+  }
+
+  @keyframes fadeInPage {
+    from {
+      opacity: 0;
+    }
+
+    to {
+      opacity: 1;
+    }
+  }
+}
+
+/* ==========================================================================
+   2. ЛАЯЎТ І КАНТЭЙНЕРЫ (Components)
+   ========================================================================== */
 @layer components {
 
-  /* КАНТЭЙНЕР */
+  /* Асноўная сетка */
   .container-custom {
     @apply mx-auto px-5 w-full;
     max-width: 100vw;
   }
 
+  @media (min-width: 350px) {
+    .container-custom {
+      width: 350px;
+    }
+  }
+
+  @media (min-width: 768px) {
+    .container-custom {
+      width: 768px;
+      @apply px-9;
+    }
+  }
+
+  @media (min-width: 1280px) {
+    .container-custom {
+      width: 1280px;
+      @apply px-[60px];
+    }
+  }
+
+  /* Карэкцыя якараў (каб хэдэр не перакрываў кантэнт) */
+  section[id]::before {
+    content: "";
+    display: block;
+    height: 120px;
+    margin-top: -120px;
+    visibility: hidden;
+    pointer-events: none;
+  }
+
+  /* Дэкаратыўная дыяганаль на фоне */
   .site-diagonal {
     @apply fixed inset-0 pointer-events-none overflow-hidden;
     z-index: 1;
@@ -26,84 +83,65 @@
     mix-blend-mode: screen;
     pointer-events: none;
   }
-
-  @media (min-width: 350px) {
-    .container-custom {
-      width: 350px;
-    }
-  }
-
-  @media (min-width: 768px) {
-    .container-custom {
-      width: 768px;
-      @apply px-9;
-    }
-
-    .section-spacing {
-      @apply py-[60px];
-    }
-
-    .section-title {
-      @apply text-[32px];
-    }
-  }
-
-  @media (min-width: 1280px) {
-    .container-custom {
-      width: 1280px;
-      @apply px-[60px];
-    }
-
-    .section-spacing {
-      @apply py-20;
-    }
-
-    .section-title {
-      @apply text-[48px];
-    }
-  }
-
-  /* Базавыя параметры секцый для мабілак (па змаўчанні) */
-  .section-spacing {
-    @apply py-10;
-  }
-
-  .section-title {
-    @apply text-[22px] font-black uppercase italic leading-[1.1] text-white font-sans;
-  }
-
-  section[id]::before {
-    content: "";
-    display: block;
-    /* Вышыня твайго хэдэра. Пастаў 100px або больш, пакуль не стане ідэальна */
-    height: 120px;
-    /* Адмоўны маржын "падцягвае" кантэнт назад, каб не было пустой прасторы */
-    margin-top: -120px;
-    visibility: hidden;
-    pointer-events: none;
-  }
 }
 
-@layer base {
-  html {
-    scroll-behavior: smooth;
-  }
+/* ==========================================================================
+   3. КАСТОМНЫ СКРОЛБАР (Webkit)
+   ========================================================================== */
 
-  body {
-    @apply bg-black font-sans text-white antialiased;
-    /* Дадаем анімацыю з'яўлення */
-    animation: fadeInPage 0.5s ease-in-out;
-  }
+/* Агульныя параметры */
+::-webkit-scrollbar {
+  width: 12px !important;
+  height: 12px !important;
+  display: block !important;
+}
 
-  @keyframes fadeInPage {
-    from {
-      opacity: 0;
-    }
+/* Дарожка і Бегунок */
+::-webkit-scrollbar-track {
+  background: #050505 !important;
+  border-left: 2px solid rgba(255, 255, 255, 0.05) !important;
+}
 
-    to {
-      opacity: 1;
-    }
-  }
+::-webkit-scrollbar-thumb {
+  background-color: #dc2626 !important;
+  border: 2px solid #050505 !important;
+  border-radius: 4px !important;
+}
 
+::-webkit-scrollbar-thumb:hover {
+  background-color: #ffffff !important;
+}
 
+/* Кнопкі-стрэлкі (Трыкутнікі) */
+::-webkit-scrollbar-button:single-button {
+  background-color: #050505;
+  display: block;
+  border-style: solid;
+  height: 12px;
+  width: 12px;
+}
+
+/* Напрамкі стрэлак */
+::-webkit-scrollbar-button:single-button:vertical:decrement {
+  border-width: 0 6px 6px 6px;
+  border-color: transparent transparent #dc2626 transparent;
+}
+
+::-webkit-scrollbar-button:single-button:vertical:increment {
+  border-width: 6px 6px 0 6px;
+  border-color: #dc2626 transparent transparent transparent;
+}
+
+/* Ховер на кнопкі */
+::-webkit-scrollbar-button:vertical:single-button:hover {
+  border-color: transparent transparent #ffffff transparent;
+}
+
+::-webkit-scrollbar-button:vertical:single-button:increment:hover {
+  border-color: #ffffff transparent transparent transparent;
+}
+
+/* Карэкцыя для мадалкі */
+#material-modal *::-webkit-scrollbar {
+  width: 10px !important;
 }
