@@ -39,27 +39,31 @@
     <load src="/src/partials/header.html" />
     <load src="/src/partials/mobile-menu.html" />
 
-    <main class="relative min-h-screen w-full bg-black">
-        <section id="materials" class="bg-black">
+    <main class="relative min-h-screen w-full bg-black text-white">
+        <section id="materials" class="bg-black text-white overflow-hidden py-8 md:py-12 xl:py-16">
             <div class="container-custom mx-auto">
 
-                <div class="sticky top-[120px] z-40 bg-black/50 backdrop-blur-md pt-6 border-b border-white/10">
-                    <div>
-                        <span data-i18n="materials.label"
-                            class="text-red-600 font-bold uppercase tracking-widest text-[10px] md:text-xs">
+
+
+                <div class="flex flex-col mb-6">
+                    <div class="flex items-end gap-4 w-full">
+                        <span
+                            class="tracking-[0.3em] text-red-600 font-black text-sm leading-tight whitespace-nowrap md:whitespace-normal"
+                            data-i18n="materials.label">
                             Матэрыялы
                         </span>
-                        <h1 data-i18n="materials.title"
-                            class="text-white text-3xl md:text-5xl xl:text-6xl font-black uppercase italic mt-2 tracking-tighter leading-[0.9]">
-                            База ведаў
-                        </h1>
+                        <div class="flex-1 h-px bg-red-600 mb-1"></div>
                     </div>
-
-                    <nav id="materials-nav" class="flex flex-wrap gap-x-6 gap-y-2 pt-4 border-t border-white/5">
-                    </nav>
                 </div>
+                <h1 data-i18n="materials.title"
+                    class="text-white text-4xl md:text-5xl xl:text-7xl font-black uppercase leading-[1] tracking-tighter mb-10">
+                    База ведаў
+                </h1>
+                <nav id="materials-nav" class="flex flex-wrap gap-x-4 gap-y-2 mb-2">
+                </nav>
 
-                <div class="grid gap-6 py-12 pb-20" id="materials-container">
+
+                <div class="grid gap-6 " id="materials-container">
                 </div>
 
                 <load src="/src/partials/modal.html" />
