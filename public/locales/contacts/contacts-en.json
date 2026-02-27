@@ -98,5 +98,11 @@
     "copy_address_usdc_eth": "Copy USDC ETH ERC20 address",
     "copy_address_usdt_tron": "Copy USDT Tron address",
     "copy_address_trx": "Copy TRX Tron address"
+  },
+  "social": {
+    "telegram_label": "Telegram",
+    "instagram_label": "Instagram",
+    "facebook_label": "Facebook",
+    "linkedin_label": "LinkedIn"
   }
 }

@@ -98,5 +98,11 @@
     "copy_address_usdc_eth": "Скопіювати USDC ETH ERC20 рахунок",
     "copy_address_usdt_tron": "Скопіювати USDT Tron рахунок",
     "copy_address_trx": "Скопіювати TRX Tron рахунок"
+  },
+  "social": {
+    "telegram_label": "Telegram",
+    "instagram_label": "Instagram",
+    "facebook_label": "Facebook",
+    "linkedin_label": "LinkedIn"
   }
 }

@@ -98,5 +98,11 @@
     "copy_address_usdc_eth": "Скопировать USDC ETH ERC20 счет",
     "copy_address_usdt_tron": "Скопировать USDT Tron счет",
     "copy_address_trx": "Скопировать TRX Tron счет"
+  },
+  "social": {
+    "telegram_label": "Telegram",
+    "instagram_label": "Instagram",
+    "facebook_label": "Facebook",
+    "linkedin_label": "LinkedIn"
   }
 }
