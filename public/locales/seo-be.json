@@ -58,10 +58,10 @@
     "gallery": {
       "title": "Галерэя | Жывая гісторыя | Bulwark Fund | Gallery | Live History",
       "description": "Гісторыя беларускага добраахвотніцкага руху ў фотаздымках. | The history of the Belarusian volunteer movement in photographs.",
-      "og_title": "Галерэя Bulwark Fund | BY / EN",
+      "og_title": "Галерэя Bulwark Fund | Gallery",
       "og_description": "Візуальная гісторыя беларускага дабраахвотніцкага руху ва Украіне. | Visual history of the Belarusian volunteer movement in Ukraine.",
       "og_site_name": "Bulwark Fund",
-      "twitter_title": "Галерэя Bulwark Fund | BY / EN",
+      "twitter_title": "Галерэя Bulwark Fund | Gallery",
       "twitter_description": "Гісторыя беларускага добраахвотніцкага руху ў фотаздымках. | The history of the Belarusian fighters movement in photographs."
     },
     "news_full": {
@@ -99,6 +99,15 @@
       "og_site_name": "Bulwark Fund",
       "twitter_title": "Donate to Bulwark Fund | BY / EN",
       "twitter_description": "Зрабі свой унёсак у бяспеку беларускіх добраахвотнікаў. | Contribute to the security of Belarusian volunteers."
+    },
+    "zarok_vajara": {
+      "title": "Зарок беларускага ваяра | Belarusian Fighter's Oath | Bulwark Fund",
+      "description": "Зарок беларускага ваяра — урачыстая прысяга добраахвотнікаў за свабоду Беларусі. | The Oath of a Belarusian Fighter — a solemn pledge of volunteers for the freedom of Belarus.",
+      "og_title": "Зарок беларускага ваяра | Belarusian Fighter's Oath",
+      "og_description": "Урачыстая прысяга беларускіх добраахвотнікаў. | Solemn oath of Belarusian fighters.",
+      "og_site_name": "Bulwark Fund",
+      "twitter_title": "Зарок беларускага ваяра | Belarusian Fighter's Oath",
+      "twitter_description": "Урачысты зарок беларускіх воінаў за вольную Беларусь. | Solemn oath of Belarusian fighters for a free Belarus."
     }
   }
 }

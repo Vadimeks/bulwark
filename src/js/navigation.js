@@ -44,7 +44,9 @@ export const initNavigation = () => {
             behavior: "smooth",
           });
 
-          history.pushState(null, null, targetId);
+          setTimeout(() => {
+            history.replaceState(null, null, window.location.pathname);
+          }, 800);
         }
         // Калі элемента няма (значыць, мы на іншай старонцы),
         // браўзер проста пяройдзе па спасылцы /index.html#target - гэта нам і трэба.
@@ -52,7 +54,7 @@ export const initNavigation = () => {
     });
   });
 
-  // Апрацоўка прызямлення з іншай старонкі (застаецца без зменаў)
+  // Апрацоўка прызямлення з іншай старонкі
   if (window.location.hash) {
     window.scrollTo(0, 0);
 
@@ -71,6 +73,10 @@ export const initNavigation = () => {
           top: offsetPosition,
           behavior: "smooth",
         });
+
+        setTimeout(() => {
+          history.replaceState(null, null, window.location.pathname);
+        }, 800);
       }, 400);
     }
   }
