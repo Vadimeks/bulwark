@@ -1,6 +1,10 @@
 .hero-img {
-    object-position: center center;
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
     object-fit: cover;
+    object-position: center center;
 }
 
 @media (min-width: 768px) {
