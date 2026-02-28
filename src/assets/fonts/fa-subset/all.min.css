@@ -18,6 +18,7 @@
     font-family: var(--_fa-family);
     font-feature-settings: normal;
     font-style: normal;
+    font-display: swap;
     font-synthesis: none;
     font-variant: normal;
     font-weight: var(--fa-style, 900);
@@ -6698,6 +6699,7 @@
 @font-face {
     font-family: "Font Awesome 7 Brands";
     font-style: normal;
+    font-display: swap;
     font-weight: 400;
     font-display: block;
     src: url(/src/assets/fonts/fa-subset/webfonts/fa-brands-400.woff2)
@@ -8955,6 +8957,7 @@
 @font-face {
     font-family: "Font Awesome 7 Free";
     font-style: normal;
+    font-display: swap;
     font-weight: 400;
     font-display: block;
     src: url(/src/assets/fonts/fa-subset/webfonts/fa-regular-400.woff2)
@@ -8979,6 +8982,7 @@
 @font-face {
     font-family: "Font Awesome 7 Free";
     font-style: normal;
+    font-display: swap;
     font-weight: 900;
     font-display: block;
     src: url(/src/assets/fonts/fa-subset/webfonts/fa-solid-900.woff2)
