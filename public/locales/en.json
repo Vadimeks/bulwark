@@ -14,14 +14,23 @@
     "get_help": "Get Help",
     "be_partner": "Help | Become a Partner",
     "support": "Support",
-    "home_label": "Bulwark Fund — go to homepage"
+    "home_label": "Bulwark Fund — go to homepage",
+    "logo_src": "/src/assets/img/logo.svg",
+    "logo_alt": "Bulwark Fund"
+  },
+  "common": {
+    "slogan": "Your Reliable Defense"
   },
   "hero": {
     "title_part1": "Your",
     "title_part2": "Reliable",
     "title_part3": "Bulwark",
     "description": "Helping those who defend our peace. The Bulwark Fund stands for transparency, integrity, and effective support.",
-    "btn_get_help": "Get Help"
+    "btn_get_help": "Get Help",
+    "btn_support": "Support",
+    "img_mob_src": "/src/assets/img/hero-bg.webp",
+    "img_desk_src": "/src/assets/img/hero-bg-desk.webp",
+    "img_alt": ""
   },
   "about": {
     "tag": "Mission and Vision",
@@ -38,7 +47,7 @@
     "stat_desc_2": "Every dictator falls. We are preparing the builders of a new Belarus.",
     "quote": "\"Freedom has no borders, and tyranny is a common threat to the entire region.\""
   },
-  "history": {
+  "story": {
     "tag": "Human Factor",
     "title": "Our Story",
     "lead": "The story of Bulwark began not in an office, but through the meeting of a Ukrainian woman from Kharkiv and a Belarusian volunteer.",
@@ -56,6 +65,16 @@
     "slogan_text1": "Common history — common future!",
     "conclusion_1": "Today, they are building the Bulwark Foundation together, uniting those who believe that freedom is everyone's right.",
     "conclusion_highlight": "“We are returning. We are building a new Belarus!”",
+    "alisa_img_alt": "Alisa Kosenko",
+    "vlad_img_alt": "Vladislav Solovey",
+    "alisa_img_src": "/src/assets/img/alisa.webp",
+    "vlad_img_src": "/src/assets/img/vlad.webp",
+    "link_youtube_label": "YouTube",
+    "link_youtube_url": "https://www.youtube.com/watch?v=q6A4ad6-Uc4",
+    "link_viasna_label": "Viasna96",
+    "link_viasna_url": "https://spring96.org/ru/news/99103"
+  },
+  "history": {
     "top_label": "Survival",
     "title_1": "Historical",
     "title_2": "Overview",
@@ -81,6 +100,16 @@
     "sec2_p3": "Today, history again puts us before a common enemy, and our response to this challenge will determine the future of the entire region for centuries to come.",
     "sec3_p1": "August 9, 2020, was a turning point. The regime responded with terror: tens of thousands of arrests, torture at Akrestsina. As of February 2026, more than 1,400 political prisoners remain behind bars."
   },
+  "volunteers": {
+    "tag": "Support",
+    "title": "Support for Volunteers",
+    "crit1_title": "For whom:",
+    "crit1_text": "Exclusively for Belarusian volunteers (active-duty personnel and veterans) fighting or having fought within the AFU / NGU.",
+    "crit2_title": "What we provide:",
+    "crit2_text": "Legalization consultations, document recovery, and professional psychological support.",
+    "warning": "Important: We do not collect funds for weapons or ammunition. Our focus is your legal and mental status.",
+    "cta": "Need help? Contact us"
+  },
   "forms": {
     "success_toast": "✅ Sent successfully!",
     "error_toast": "❌ Error occurred.",
@@ -92,12 +121,21 @@
     "tg_needs": "📝 Needs",
     "tg_org": "🏢 Organization",
     "tg_message": "💬 Message",
-    "org": "Organization / Name (min. 2 chars)",
+    "org_label": "Organization / Name (min. 2 chars)",
     "contact": "Email (xxx@xx.xxx) / Phone (+...)",
     "message": "How can we cooperate? (min. 10 chars)",
-    "org_label": "Organization / Name",
+    "name_placeholder": "Name / Callsign (min. 2 characters)",
+    "status_label": "Status",
+    "status_select": "Status (select from list)",
+    "status_active": "Active-duty military",
+    "status_veteran": "Veteran",
+    "status_family": "Volunteer's family",
+    "needs_placeholder": "What help is needed? (min. 10 characters)",
+    "contact_placeholder": "Telegram/Signal(@user) or Phone(+...)",
+    "btn_send": "Send Request",
     "message_label": "Message",
-    "contact_label": "Contact"
+    "contact_label": "Contact",
+    "partners_btn": "Become a Partner"
   },
   "activity": {
     "tag": "Fields of Work",
@@ -118,8 +156,15 @@
     "type2_text": "If you are a lawyer or psychologist and ready to consult pro bono — join us.",
     "type3_title": "For Business",
     "type3_text": "Discounts on services, rehabilitation programs, or locations for meetings.",
-    "cta": "Have an offer? Contact us",
-    "btn": "Become a Partner"
+    "cta": "Have an offer? Contact us"
+  },
+  "news": {
+    "tag": "News",
+    "title": "Latest Events",
+    "all_news_btn": "All News",
+    "read_more": "Read more",
+    "prev": "Previous news",
+    "next": "Next news"
   },
   "donate": {
     "tag": "Support",
@@ -140,28 +185,6 @@
     "purpose_title": "Mandatory field:",
     "purpose_label": "Payment purpose:"
   },
-  "news": {
-    "title": "Latest Events",
-    "all_news_btn": "All News",
-    "read_more": "Read more",
-    "prev": "Previous news",
-    "next": "Next news"
-  },
-  "news-full": {
-    "tag": "Archive",
-    "label": "News",
-    "loading": "Loading...",
-    "error_load": "Failed to load news."
-  },
-  "common": {
-    "slogan": "Your Reliable Defense"
-  },
-  "footer": {
-    "nav_title": "Navigation",
-    "privacy": "Privacy Policy",
-    "cookies": "Cookies",
-    "accept_label": "Accept cookies"
-  },
   "modal": {
     "print": "Print",
     "copy": "Copy",
@@ -169,7 +192,34 @@
     "close": "Close",
     "print_aria": "Print material",
     "copy_aria": "Copy material",
-    "close_aria": "Close window"
+    "close_aria": "Close window",
+    "copy_error": "Error"
+  },
+  "footer": {
+    "nav_title": "Navigation",
+    "privacy": "Privacy Policy",
+    "cookies": "Cookies",
+    "accept_label": "Accept cookies",
+    "email": "info@bulwark-fund.org",
+    "phone": "+380 (96) 659 49 23",
+    "copyright": "© 2026 CO \"CF \"BULWARK\". ALL RIGHTS RESERVED.",
+    "email_href": "mailto:info@bulwark-fund.org",
+    "phone_href": "tel:+380966594923",
+    "signal_name": "Signal"
+  },
+  "contacts": {
+    "title": "Contacts",
+    "support_bot": "Support Bot",
+    "urgent_link": "Urgent Contact",
+    "confidential": "Confidential",
+    "bot_url": "https://t.me/bulwark_fund_bot",
+    "signal_url": "https://signal.me/#eu/KMAqbBp0k4GcSPEitaVRhF9fDYmXi-n5vHNjWPqivXyaSTlEUFNCrKU-fA7-lqR2"
+  },
+  "news-full": {
+    "tag": "Archive",
+    "label": "News",
+    "loading": "Loading...",
+    "error_load": "Failed to load news."
   },
 
   "gallery": {
@@ -237,34 +287,6 @@
       "point3": "Solidarity of nations",
       "bg_text": "Future"
     }
-  },
-  "contacts": {
-    "title": "Contacts",
-    "support_bot": "Support Bot",
-    "urgent_link": "Urgent Contact",
-    "confidential": "Confidential"
-  },
-
-  "volunteers": {
-    "tag": "Support",
-    "title": "Support for Volunteers",
-    "crit1_title": "For whom:",
-    "crit1_text": "Exclusively for Belarusian volunteers (active-duty personnel and veterans) fighting or having fought within the AFU / NGU.",
-    "crit1_text_short": "Active-duty military and Belarusian veterans.",
-    "crit2_title": "What we provide:",
-    "crit2_text": "Legalization consultations, document recovery, and professional psychological support.",
-    "crit2_text_short": "Legalization, extradition, PTSD support, document recovery.",
-    "warning": "Important: We do not collect funds for weapons or ammunition. Our focus is your legal and mental status.",
-    "cta": "Need help? Contact us",
-    "name_placeholder": "Name / Callsign (min. 2 characters)",
-    "status_select": "Status (select from list)",
-    "status_active": "Active-duty military",
-    "status_veteran": "Veteran",
-    "status_family": "Volunteer's family",
-    "needs_placeholder": "What help is needed? (min. 10 characters)",
-    "contact_placeholder": "Telegram/Signal(@user) or Phone(+...)",
-    "btn_send": "Send Request",
-    "contact_label": "Contact"
   },
 
   "materials": {

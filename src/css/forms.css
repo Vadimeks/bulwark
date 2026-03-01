@@ -89,9 +89,9 @@ select:not(:invalid) {
 }
 
 /* Стыль для заблакаваных палёў (крокі 2, 3, 4) */
-.opacity-40 {
+#help-form .opacity-40,
+#partners-form .opacity-40 {
     opacity: 0.25 !important;
-    /* Зрабіў крыху больш празрыстым для кантрасту */
     filter: grayscale(1);
     transition: all 0.5s ease;
 }
