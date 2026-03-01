@@ -97,6 +97,16 @@
     "sec2_p3": "Today, history again puts us before a common enemy, and our response to this challenge will determine the future of the entire region for centuries to come.",
     "sec3_p1": "August 9, 2020, was a turning point. The regime responded with terror: tens of thousands of arrests, torture at Akrestsina. As of February 2026, more than 1,400 political prisoners remain behind bars."
   },
+  "volunteers": {
+    "tag": "Support",
+    "title": "Support for Volunteers",
+    "crit1_title": "For whom:",
+    "crit1_text": "Exclusively for Belarusian volunteers (active-duty personnel and veterans) fighting or having fought within the AFU / NGU.",
+    "crit2_title": "What we provide:",
+    "crit2_text": "Legalization consultations, document recovery, and professional psychological support.",
+    "warning": "Important: We do not collect funds for weapons or ammunition. Our focus is your legal and mental status.",
+    "cta": "Need help? Contact us"
+  },
   "forms": {
     "success_toast": "✅ Sent successfully!",
     "error_toast": "❌ Error occurred.",
@@ -108,10 +118,18 @@
     "tg_needs": "📝 Needs",
     "tg_org": "🏢 Organization",
     "tg_message": "💬 Message",
-    "org": "Organization / Name (min. 2 chars)",
+    "org_label": "Organization / Name (min. 2 chars)",
     "contact": "Email (xxx@xx.xxx) / Phone (+...)",
     "message": "How can we cooperate? (min. 10 chars)",
-    "org_label": "Organization / Name",
+    "name_placeholder": "Name / Callsign (min. 2 characters)",
+    "status_label": "Status",
+    "status_select": "Status (select from list)",
+    "status_active": "Active-duty military",
+    "status_veteran": "Veteran",
+    "status_family": "Volunteer's family",
+    "needs_placeholder": "What help is needed? (min. 10 characters)",
+    "contact_placeholder": "Telegram/Signal(@user) or Phone(+...)",
+    "btn_send": "Send Request",
     "message_label": "Message",
     "contact_label": "Contact"
   },
@@ -259,28 +277,6 @@
     "support_bot": "Support Bot",
     "urgent_link": "Urgent Contact",
     "confidential": "Confidential"
-  },
-
-  "volunteers": {
-    "tag": "Support",
-    "title": "Support for Volunteers",
-    "crit1_title": "For whom:",
-    "crit1_text": "Exclusively for Belarusian volunteers (active-duty personnel and veterans) fighting or having fought within the AFU / NGU.",
-    "crit1_text_short": "Active-duty military and Belarusian veterans.",
-    "crit2_title": "What we provide:",
-    "crit2_text": "Legalization consultations, document recovery, and professional psychological support.",
-    "crit2_text_short": "Legalization, extradition, PTSD support, document recovery.",
-    "warning": "Important: We do not collect funds for weapons or ammunition. Our focus is your legal and mental status.",
-    "cta": "Need help? Contact us",
-    "name_placeholder": "Name / Callsign (min. 2 characters)",
-    "status_select": "Status (select from list)",
-    "status_active": "Active-duty military",
-    "status_veteran": "Veteran",
-    "status_family": "Volunteer's family",
-    "needs_placeholder": "What help is needed? (min. 10 characters)",
-    "contact_placeholder": "Telegram/Signal(@user) or Phone(+...)",
-    "btn_send": "Send Request",
-    "contact_label": "Contact"
   },
 
   "materials": {

@@ -57,7 +57,7 @@
                     data-i18n="volunteers.cta">Патрэбна дапамога? Напішыце нам</p>
                 <form id="help-form" class="space-y-5">
                     <div id="help-step-1">
-                        <input type="text" name="user_name" data-i18n="[placeholder]volunteers.name_placeholder"
+                        <input type="text" name="user_name" data-i18n="[placeholder]forms.name_placeholder"
                             placeholder="Імя / Пазыўны (мін.2 сімвалы)" required minlength="2" autocomplete="off"
                             autocapitalize="none"
                             class="w-full bg-black border border-white/10 p-2 md:p-4 text-white text-base outline-none focus:border-red-600 transition-all font-medium">
@@ -65,15 +65,15 @@
 
                     <div id="help-step-2" class="opacity-40 pointer-events-none transition-all duration-500">
                         <div class="relative">
-                            <label for="user_status" class="sr-only" data-i18n="volunteers.status_label">Статус</label>
+                            <label for="user_status" class="sr-only" data-i18n="forms.status_label">Статус</label>
                             <select id="user_status" name="user_status" required
                                 class="w-full bg-black border border-white/10 p-4 text-white text-base outline-none focus:border-red-600 transition-all font-medium appearance-none cursor-pointer">
-                                <option value="" disabled selected data-i18n="volunteers.status_select">Статус (абярыце
+                                <option value="" disabled selected data-i18n="forms.status_select">Статус (абярыце
                                     са спіса)</option>
-                                <option value="Дзейны вайсковец" data-i18n="volunteers.status_active">Дзейны вайсковец
+                                <option value="Дзейны вайсковец" data-i18n="forms.status_active">Дзейны вайсковец
                                 </option>
-                                <option value="Ветэран" data-i18n="volunteers.status_veteran">Ветэран</option>
-                                <option value="Сям'я добраахвотніка" data-i18n="volunteers.status_family">Сям'я
+                                <option value="Ветэран" data-i18n="forms.status_veteran">Ветэран</option>
+                                <option value="Сям'я добраахвотніка" data-i18n="forms.status_family">Сям'я
                                     добраахвотніка</option>
                             </select>
                             <div class="absolute inset-y-0 right-4 flex items-center pointer-events-none">
@@ -83,22 +83,21 @@
                     </div>
 
                     <div id="help-step-3" class="opacity-40 pointer-events-none transition-all duration-500">
-                        <textarea name="user_needs" data-i18n="[placeholder]volunteers.needs_placeholder"
+                        <textarea name="user_needs" data-i18n="[placeholder]forms.needs_placeholder"
                             placeholder="Якая дапамога патрэбна? (мін. 10 сімвалаў)" required minlength="10"
                             class="w-full bg-black border border-white/10 p-4 text-white text-base h-32 outline-none focus:border-red-600 transition-all font-medium resize-none"></textarea>
                     </div>
 
                     <div id="help-step-4" class="opacity-40 pointer-events-none transition-all duration-500">
-                        <label for="user_contact" class="sr-only" data-i18n="volunteers.contact_label">Кантакт</label>
-                        <input id="user_contact" name="user_contact"
-                            data-i18n="[placeholder]volunteers.contact_placeholder"
+                        <label for="user_contact" class="sr-only" data-i18n="forms.contact_label">Кантакт</label>
+                        <input id="user_contact" name="user_contact" data-i18n="[placeholder]forms.contact_placeholder"
                             placeholder="Telegram/Signal(@user) або Phone(+38..)" required
                             class="w-full bg-black border border-white/10 p-4 text-white text-base outline-none focus:border-red-600 transition-all font-medium">
                     </div>
 
                     <button type="submit"
                         class="w-full bg-red-600 py-5 text-white font-black uppercase tracking-widest text-xs hover:bg-white hover:text-black transition-all flex justify-center items-center gap-2">
-                        <span data-i18n="volunteers.btn_send">Адправіць запыт</span>
+                        <span data-i18n="forms.btn_send">Адправіць запыт</span>
                         <i class="fa-solid fa-circle-notch fa-spin loader-icon" aria-hidden="true"
                             style="display: none !important;"></i>
                     </button>
