@@ -16,6 +16,7 @@ section#news .news-slider .swiper-slide>div {
 }
 
 /* Фіксацыя загалоўка: робім аднолькавую прастору для 1 і 2 радкоў */
+section#news .news-slider h3,
 section#news .news-slider h4 {
     display: -webkit-box;
     line-clamp: 2;
