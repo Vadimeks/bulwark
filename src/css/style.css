@@ -146,3 +146,24 @@
 #material-modal *::-webkit-scrollbar {
   width: 10px !important;
 }
+
+@font-face {
+  font-family: 'Inter';
+  src: url('/src/assets/fonts/inter/inter-400.woff2') format('woff2');
+  font-weight: 400;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Inter';
+  src: url('/src/assets/fonts/inter/inter-700.woff2') format('woff2');
+  font-weight: 700;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Inter';
+  src: url('/src/assets/fonts/inter/inter-900.woff2') format('woff2');
+  font-weight: 900;
+  font-display: swap;
+}
