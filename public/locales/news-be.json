@@ -1,5 +1,14 @@
 [
   {
+    "id": 8,
+    "date": "08.03.2026",
+    "title": "Хтось штось зрабіў",
+    "excerpt": "Хтось штось зрабіў",
+    "image": "/img/news/news-8-full.webp",
+    "image_thumb": "/img/news/news-8-full.webp",
+    "content": "<h2></h2><h2>Хтось штось зрабіў</h2><h3></h3><p></p>"
+  },
+  {
     "id": 7,
     "date": "08.03.2026",
     "title": "Хтось штось зрабіў",
