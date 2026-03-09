@@ -3,8 +3,8 @@
     "id": 7,
     "date": "09.03.2026",
     "title": "Хтось штось зрабіў",
-    "excerpt": "content.js:1 Uncaught (in promise) The message port closed before a response was received.\ninstallHook.js:1 Error: Галоўнае фота больш за 200кб\n    at HTMLButtonElement.<anonymous> (index-CXj9wVxI.js:198:1778)",
-    "content": "<p></p>",
+    "excerpt": "Хтось штось зрабіў",
+    "content": "<p>Хтось штось зрабіў</p>",
     "image": "/img/news/news-7-full.webp",
     "image_thumb": "/img/news/news-7-full.webp"
   },
