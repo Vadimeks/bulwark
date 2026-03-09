@@ -75,8 +75,10 @@ function setupInternalLogic(container) {
       if (btn) {
         const target = document.getElementById(btn.dataset.anchor);
         if (target) {
+          const containerRect = container.getBoundingClientRect();
+          const targetRect = target.getBoundingClientRect();
           container.scrollTo({
-            top: target.offsetTop - 20,
+            top: container.scrollTop + targetRect.top - containerRect.top - 20,
             behavior: "smooth",
           });
         }

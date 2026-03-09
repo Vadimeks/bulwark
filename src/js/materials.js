@@ -30,7 +30,15 @@ export async function initMaterials() {
           )
           .join("");
 
-        // (Логіка скролу застаецца без зменаў)
+        nav.addEventListener("click", (e) => {
+          const btn = e.target.closest(".category-nav-btn");
+          if (btn) {
+            const target = document.getElementById(btn.dataset.id);
+            if (target) {
+              target.scrollIntoView({ behavior: "smooth", block: "start" });
+            }
+          }
+        });
       }
 
       // 2. Рэндэр карткаў
